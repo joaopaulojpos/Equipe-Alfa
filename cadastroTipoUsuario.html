@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Cadastro Tipo Usuário</title>
+	<link rel="stylesheet" href="arquivo.css">
+</head>
+<body>
+	<div>
+	<fieldset id="fieldsetTipoUsuario">
+		<h3 id="titulo"><b>Cadastro Tipo Usuário</b></h3>
+		<hr>
+		<form method="post" action="cadastroTipoUsuario.php">
+			<label>Código: </label><br/><input type="number" min="1" max="10" id="codigoTipoUsuario" name="codigoTipoUsuario"/><br/><br/>
+			<label>Descrição: </label><br/><textarea id="descricaoTipoUsuario" name="descricaoTipoUsuario" rows="3" cols="50"></textarea><br/><br/><br/>
+			<input type="submit" value="Cadastrar" class="botao">
+			<input type="button" value="Voltar" class="botao" onclick="location.href='inicioAdministrador.html'">
+		</form>
+	</fieldset>
+	</div>
+</body>
+</html>
