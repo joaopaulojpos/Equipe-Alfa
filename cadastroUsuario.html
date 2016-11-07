@@ -5,21 +5,21 @@
         <title>Cadastro de Usuário</title>  
         <link rel="stylesheet" href="arquivo.css">            
     </head>
-        <body>            
-            <div>    
-                <fieldset id=fieldsetcadastro>
-                <h2><b>Cadastro de Usuário</b></h2> 
-		<hr>
+    <body>            
+        <div>    
+            <fieldset id=fieldsetcadastro>
+                <h2 id="tituloCadastroU"><b>Cadastro de Usuário</b></h2> 
+                <hr>
                 <form method="post" action="cadastroUsuario.php" id="formcadastro">
-                    <label class="label">Código </label><br/><input type="text" id="codigoUsuario" name="codigoUsuario" placeholder="Digite o código" class="inputs"/><br/><br/>
-                    <label class="label">Tipo </label><br/><input type="number" id="codigoTipoUsuario" name="codigoTipoUsuario"  placeholder="Digite o tipo" min="1" max="3" class="inputs"/><br/><br/>
-                    <label class="label">Login</label><br/><input type="text" id="usuarioLogin" name="usuarioLogin" placeholder="Digite seu login" class="inputs"/><br/><br/>
-                    <label class="label">Senha</label><br/><input type="password"  id="senha" name="senha" class="inputs" placeholder="Digite sua senha"/><br/><br/>
-                    <label class="label">Confirmar</label><br/><input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha" class="inputs"><br/><br/><br/>               
-                    <div id="btncd"><input type="submit" value="Cadastrar" class="botao" name="cadastrar">
-                    <input type="button" value="Voltar" class="botao" name="voltar" onclick="location.href='login.html'"/></div>
+                    <label for="codigoUsuario">Código </label><br/><input type="text" id="codigoUsuario" name="codigoUsuario" placeholder="Digite o código" class="inputs"/><br/><br/>
+                    <label for="codigoTipoUsuario">Tipo </label><br/><input type="number" id="codigoTipoUsuario" name="codigoTipoUsuario"  placeholder="Digite o tipo" min="1" max="3" class="inputs"/><br/><br/>
+                    <label for="usuarioLogin">Login</label><br/><input type="text" id="usuarioLogin" name="usuarioLogin" placeholder="Digite seu login" class="inputs"/><br/><br/>
+                    <label for="senha">Senha</label><br/><input type="password"  id="senha" name="senha" class="inputs" placeholder="Digite sua senha"/><br/><br/>
+                    <label for="confirmarSenha">Confirmar</label><br/><input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha" class="inputs"><br/><br/><br/>               
+                    <div id="btncd"><input type="submit" value="Cadastrar" class="botao" name="cadastrar"/>                    
+                        <input type="button" value="Voltar" class="botao" name="voltar" onclick="location.href = 'login.html'"/></div>
                 </form>
-                </fieldset>
-            </div>
-        </body>
+            </fieldset>
+        </div>
+    </body>
 </html>
