@@ -1,60 +1,52 @@
+/*CSS Listar Alunos*/
 body
 {
-	background-color: #e0dcdc;
+    background-color: #e0dcdc;
 }
 h2
 {
-	margin-top: -5px;
-	font-size: 22px;
-	color: #2a2727;
+    margin-top: -5px;
+    font-size: 22px;
+    color: #2a2727;
 }
 fieldset
 {
-	background-color: #9b9595;
-	padding: 30px;
-	width: 880px;	
-	margin-top: 50px;
-	margin-left: 200px;
+    background-color: #9b9595;
+    padding: 30px;        
+    width: 880px;	
+    margin-top: 40px;
+    margin-left: 200px;
 }
 #divscrowbar
 {
-	overflow-y: auto;height: 200px;	
+    overflow-y: auto;
+    height: 200px;	
 }
 label
 {
-	color: #ffffff;
-}
-#linkexcluir
-{
-	color: navy;
-}
-#linkeditar
-{
-	
-	color: navy;
-	text-align: right;	
+    color: #ffffff;
 }
 #links
 {
-	float: right;
-	margin-top: -22px;
-	margin-right: 10px;
+    float: right;
+    margin-top: -22px;
+    margin-right: 10px;
 }
 .botao
 {
-	background-color: #2a2727;
-	color: #ffffff;
-	border-radius: 13px;
-	width: 80px;
-	height: 25px;
+    background-color: #2a2727;
+    color: #ffffff;
+    border-radius: 13px;
+    width: 80px;
+    height: 25px;
 }
 a{
-	text-decoration: none;
+    text-decoration: none;
 }
 #nomeAluno
 {
-	width: 250px;	
+    width: 250px;	
 }
 #icone{
-	border-radius: 15px;
+    border-radius: 15px;
 }
