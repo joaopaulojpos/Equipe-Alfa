@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-	<meta charset="UTF-8">
-	<title>Cadastro Tipo Usuário</title>
-	<link rel="stylesheet" href="arquivo.css">
-</head>
-<body>
-	<div>
-	<fieldset id="fieldsetTipoUsuario">
-		<h3 id="titulo"><b>Cadastro Tipo Usuário</b></h3>
-		<hr>
-		<form method="post" action="cadastroTipoUsuario.php">
-			<label>Código: </label><br/><input type="number" min="1" max="10" id="codigoTipoUsuario" name="codigoTipoUsuario"/><br/><br/>
-			<label>Descrição: </label><br/><textarea id="descricaoTipoUsuario" name="descricaoTipoUsuario" rows="3" cols="50"></textarea><br/><br/><br/>
-			<input type="submit" value="Cadastrar" class="botao">
-			<input type="button" value="Voltar" class="botao" onclick="location.href='inicioAdministrador.html'">
-		</form>
-	</fieldset>
-	</div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastro Tipo Usuário</title>
+        <link rel="stylesheet" href="tipoUsuario.css">
+    </head>
+    <body>
+        <div>
+            <fieldset class="fieldsetTipoUsuario">
+                <h2 class="titulo"><b>Cadastro Tipo Usuário</b></h2>
+                <hr>
+                <form method="post" action="cadastroTipoUsuario.php">
+                    <label for="codigoTipoUsuario">Código: </label><br/><input type="number" min="1" max="10" id="codigoTipoUsuario" name="codigoTipoUsuario"/><br/><br/>
+                    <label for="descricaoTipoUsuario">Descrição: </label><br/><input id="descricaoTipoUsuario" name="descricaoTipoUsuario"/><br/><br/><br/>
+                    <input type="submit" value="Cadastrar" class="botao">
+                    <input type="button" value="Listar" class="botao" onclick="location.href = 'listarTipoUsuario.php'"/>
+                    <input type="button" value="Voltar" class="botao" onclick="location.href = 'inicioAdministrador.html'">
+                </form>
+            </fieldset>
+        </div>
+    </body>
 </html>
