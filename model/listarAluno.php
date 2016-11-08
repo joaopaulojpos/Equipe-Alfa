@@ -3,7 +3,7 @@
     <head lang="pt-br">
         <meta charset="utf-8">
         <title>Lista de Alunos</title>
-        <link rel="stylesheet" href="listarAluno.css">
+        <link rel="stylesheet" href="../css/listarAluno.css">
     </head>
     <body>
         <?php
@@ -70,7 +70,7 @@
                 mysqli_close($conn);
             } else {
 
-                echo "<script type='text/javascript'>alert('Não há registro de alunos no banco de dados!');location.href='cadastroAluno.html';</script>";
+                echo "<script type='text/javascript'>alert('Não há registro de alunos no banco de dados!');location.href='../view/cadastroAluno.html';</script>";
             }
         }
         ?>
