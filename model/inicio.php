@@ -16,25 +16,23 @@ if (isset($login_cookie)) {
         if ($codigoTipoUsuario == 1) {
 
             //echo "Acessível apenas para administradores";
-            header('Location:inicioAdministrador.html');
+            header('Location:../view/inicioAdministrador.html');
         } else {
             if ($codigoTipoUsuario == 2) {
 
                 //echo "Acessível apenas para professores";
-                header('Location:inicioProfessor.html');
+                header('Location:../view/inicioProfessor.html');
             } else {
                 if ($codigoTipoUsuario == 3) {
 
                     //echo "Assessível para alunos";
-                    header('Location:inicioAluno.html');
+                    header('Location:../view/inicioAluno.html');
                 } else {
 
-                    echo "<script type='text/javascript'>alert(Faça seu cadastro para poder acessar o sistema!);location.href='cadastroUsuario.html';</script>";
+                    echo "<script type='text/javascript'>alert(Faça seu cadastro para poder acessar o sistema!);location.href='../view/cadastroUsuario.html';</script>";
                 }
             }
         }
     }
 }
-echo "<br/><br/>";
-echo "<a href='login.html'><input type='button' value='Sair'/></a>";
 ?>
