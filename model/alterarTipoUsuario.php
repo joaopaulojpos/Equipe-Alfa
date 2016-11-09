@@ -2,7 +2,6 @@
 
 require_once 'conexao.php';
 
-if (isset($_POST['$codigoTipoUsuario'])) {
     $codigoTipoUsuario = $_POST['codigoTipoUsuario'];
     $descricaoTipoUsuario = $_POST['descricaoTipoUsuario'];
 
@@ -15,5 +14,5 @@ if (isset($_POST['$codigoTipoUsuario'])) {
     echo "<script type='text/javascript'>alert('Dados alterados com sucesso!');location.href='listarTipoUsuario.php';</script>";
 
     mysqli_close($conn);
-}
+
 ?>

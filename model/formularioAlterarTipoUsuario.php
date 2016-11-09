@@ -14,7 +14,7 @@ $row = mysqli_fetch_assoc($query);
     <head>
         <meta charset="UTF-8">
         <title>Alterar Tipo de Usuário</title>
-        <link rel="stylesheet" href="tipoUsuario.css">
+        <link rel="stylesheet" href="../css/tipoUsuario.css">
     </head>
     <body>
         <div>

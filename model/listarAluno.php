@@ -55,8 +55,8 @@
                     echo "<label><b>Telefone: </b></label> " . $row['telefone'] . " " . "</div>";
                     ?>	
                     <!--Enviando a matrícula por método GET para EXCLUIR e EDITAR os dados do aluno-->
-                    <div id='links'><a href="excluirAluno.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>" id='linkexcluir'><input type="image" src="imagem/lixeira1.png" width="25" height="25" id="icone"></a>&nbsp
-                        <a href="formularioAlterarAluno.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>" id='linkeditar'><input type="image" src="imagem/editar.png" width="25" height="25" id="icone"></a></div>	
+                    <div id='links'><a href="excluirAluno.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>" id='linkexcluir'><input type="image" src="../imagem/lixeira1.png" width="25" height="25" id="icone"></a>&nbsp
+                        <a href="formularioAlterarAluno.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>" id='linkeditar'><input type="image" src="../imagem/editar.png" width="25" height="25" id="icone"></a></div>	
 
                     <?php
                     echo "<hr><br/>";
@@ -64,7 +64,7 @@
                 echo "</div>";
                 echo "<br/><br/>";
                 echo "<a href='listarAluno.php'><input type='button' value='Atualizar' class='botao'/></a>" . " ";
-                echo "<a href='cadastroAluno.html'><input type='button' value='Voltar' class='botao'/></a>";
+                echo "<a href='../view/cadastroAluno.html'><input type='button' value='Voltar' class='botao'/></a>";
                 echo"</fieldset>";
 
                 mysqli_close($conn);
