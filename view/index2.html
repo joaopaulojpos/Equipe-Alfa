@@ -16,13 +16,15 @@
 	<div class="col s6 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5 login">
 	<img class="responsive-img" src="../img/logo.png" style="max-width: 150px;">
 
+		<form method="POST" action="../model/login.php" id="formlogin">
+
 	    <div class="row input-field col s12 left-align">
-        <input id="email" type="email" class="validate">
-        <label for="email">Email</label>
+        <input id="usuarioLogin" type="email" name="usuarioLogin" class="validate">
+        <label for="usuarioLogin">Email</label>
         </div>
 
-         <div class="row input-field col s12 left-align">
-        <input id="senha" type="password" class="validate">
+        <div class="row input-field col s12 left-align">
+        <input id="senha" type="password" name="senha" class="validate">
         <label for="senha">Senha</label>
         </div>
 
@@ -31,12 +33,21 @@
     	 Entrar	
         </button>
 
-        <a class="btn waves-effect waves-light" href="#!">Cadastre - Se</a>
+        <a class="btn waves-effect waves-light" href="../view/cadastroUsuario.html">Cadastre - Se</a>
 
         </div>
         <br>
+        </form>
 	</div>
 </div>
+				<!--
+                <form method="post" action="..\model\login.php" id="formlogin">
+                    <label for="usuarioLogin">Login </label><br/><input type="text" name="usuarioLogin" id="usuarioLogin" class="inputs" placeholder="Informe seu login"/><br/><br/>
+                    <label for="senha">Senha </label><br/><input type="password" name="senha" id="senha" class="inputs" placeholder="Informe sua senha"/><br/><br/><br/>
+                    <input type="submit" value="Entrar" class="btnlg" name="entrar"/>
+                    <input type="button" value="Cadastre-se" class="btnlg" onclick="location.href = 'cadastroUsuario.html'"/>
+                </form>
+                -->
 
 <!-- Materialize JS -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
