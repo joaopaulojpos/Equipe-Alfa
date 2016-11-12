@@ -15,7 +15,7 @@ $dataNascimento = date("d/m/Y", strtotime($row['dataNascimento']));
     <head>
         <meta charset="UTF-8">
         <title>Alterar Dados de Alunos</title>
-        <link rel="stylesheet" href="cadastroAluno.css">
+        <link rel="stylesheet" href="../css/cadastroAluno.css">
     </head>
     <body>
         <div>
