@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Sistema de Gerenciamento Acadêmico</title>
+	<!--Import Google Icon Font-->
+     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Materialize CSS -->
+	<link rel="stylesheet" href="../csss/materialize.css">
+	<link rel="stylesheet" href="../csss/custom.css">
+
+</head>
+<body class="#37474f blue-grey darken-3">
+
+<div class="valign-wrapper container row formulario">
+	<div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
+	    <h2>Cadastrar Aluno</h2>
+
+		<form method="POST" action="../model/cadastroAluno.php">
+
+	    <div class="row input-field col s12 left-align">
+            <input type="text" id="nomeAluno" name="nomeAluno">
+            <label for="nomeAluno">Nome</label>
+        </div>
+
+        <div class="row input-field col s6 left-align">
+        <input id="matriculaAluno" type="text" name="matriculaAluno" class="validate">
+        <label for="matriculaAluno">Matricula</label>
+        </div>
+
+        <div class="row input-field col s6 left-align">
+        <input id="dataNascimento" type="date" name="dataNascimento" class="datepicker">
+        <label for="dataNascimento">Data Nascimento</label>
+        </div>
+
+        <div class="row input-field col s6 left-align">
+            <select>
+                <option value="" disabled selected>Sexo</option>
+                <option value="F">Feminino</option>
+                <option value="M">Masculino</option>
+            </select>
+        </div>
+
+        <div class="row input-field col s6 left-align">
+            <input type="tel" id="telefone" name="telefone">
+            <label for="telefone">Telefone</label>
+        </div>
+
+        <div class="row col s4 left-align btnform">
+        <button class="btn waves-effect waves-ligth" type="submit" name="entrar">
+    	 Cadastrar	
+        </button>
+        </div>
+
+        <div class="row col s4 center-align">
+        <a class="btn waves-effect waves-light" href="../model/listarAluno.php">Listar</a>
+        </div>
+
+        <div class="row col s4 rigth-align">
+        <a class="btn waves-effect waves-light" href="../view/inicioAdministrador.html">Voltar</a>
+        </div>
+
+        <br>
+        </form>
+	</div>
+</div>
+				<!--
+                    <form method="post" action="../model/cadastroAluno.php">
+                    <label for="matriculaAluno" class="label">Matricula: </label><input type="text" id="matriculaAluno" name="matriculaAluno"/>
+                    <label for="dataNascimento" id="dtNasc">Data Nasc.: </label><input type="date" id="dataNascimento" name="dataNascimento"/><br/><br/>
+                    <label for="nomeAluno" class="label">Nome: </label><input type="text" id="nomeAluno" name="nomeAluno"/><br/><br/>
+                    <label for="sexoAluno" class="label">Sexo: </label><select id="sexoAluno" name="sexoAluno">
+                        <option value="">Selecione</option>
+                        <option value="F">F</option>
+                        <option value="M">M</option>
+                    </select>
+                    <label for="telefone" id="tel">Telefone: </label><input type="text" id="telefone" name="telefone"/><br/><br/><br/>
+                    <input type="submit" value="Cadastrar" class="btao"/>
+                    <input type="button" value="Listar" onclick="location.href = '../model/listarAluno.php'" class="btao"/>
+                    <input type="button" value="Voltar" onclick="location.href = '../view/inicioAdministrador.html'" class="btao"/>
+
+                -->
+
+<!-- Materialize JS -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- Materialize JS -->
+<script src="../js/materialize.js"></script>
+
+<!--Script para Funcionamento do Option e do Date -->
+<script>
+    $(document).ready(function(){
+        $('select').material_select();
+        $('.datepicker').pickadate();
+    });
+</script>
+
+</body>
+</html>
