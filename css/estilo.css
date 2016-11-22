@@ -1,0 +1,38 @@
+/* CSS CRUD Período */
+
+/*Estilo cadastrar período*/
+form
+{
+	padding: 20px;
+}
+
+fieldset
+{
+	padding: 30px;
+	width: 280px;
+	height: 170px;
+}
+
+
+/*Estilo listar período*/
+table
+{
+	width: 600px;
+}
+td
+{
+	text-align: center;
+	font-size: 18px;
+}
+#lgdlist
+{
+	margin-left: 215px;
+	font-size: 27px;
+}
+th
+{
+	height: 50px;
+	font-size: 20px;
+}
+
+
