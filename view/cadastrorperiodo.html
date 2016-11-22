@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Cadastro</title>
+		<link rel="stylesheet" href="estilo.css">
+	</head>
+	<body>
+		<div>
+			<form method="post" action="cadastrarPeriodo.php">
+				<fieldset>
+				<legend id="lgdcad">Cadastro de Períodos</legend>
+				<label>Código Período: </label><br/><select id="codigoPeriodo" name="codigoPeriodo">
+													<option value="" selected="">Selecione</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													</select><br/><br/>
+				<label>Tipo Ensino: </label><br/><input type="text" id="tipoEnsino" name="tipoEnsino"/><br/><br/>
+				<input type="submit" value="Cadastrar"/>
+				<input type="button" value="Lista" onclick="location.href='listarPeriodo.php'"/>				
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>
