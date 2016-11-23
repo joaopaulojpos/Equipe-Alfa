@@ -16,7 +16,10 @@
 <div class="valign-wrapper container row formulario">
     <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
         <h2>Listar Professores</h2>
-            <div class="col s8 left-align">
+            <div class="col s10 left-align">
+                <table class="highlight">
+                <tbody>
+                <tr>
                  <?php
                             require_once 'conexao.php';
 
@@ -26,12 +29,18 @@
                             if (mysqli_num_rows($query) > 0) {
 
                                 while ($row = mysqli_fetch_assoc($query)) {
+                                    ?>
 
-                                    echo "<label><b>Nome: </b></label>" . $row['nome'] . "&nbsp&nbsp&nbsp";
-                                    echo "<label><b>Telefone: </b></label>" . "&nbsp&nbsp&nbsp" . $row['telefone'];
-                                    /*Enviando a matrícula por método GET para EXCLUIR e EDITAR os dados*/
-                                    echo "<a href='excluirTipoUsuario.php?codigoTipoUsuario=$row[codigoProfessor]'><input type='image' src='../imagem/lixeira1.png' height='25' width='25' class='icones'/></a>";
-                                    echo "<a href='formularioAlterarTipoUsuario.php?codigoTipoUsuario=$row[codigoProfessor]'><input type='image' src='../imagem/editar.png' height='25' width='25' class='icones'/></a>";
+                                    <td>Nome: <?php echo $row['nome'] ?></td> <td>Telefone: <?php echo $row['telefone'] ?></td>
+                                    <td><?php echo "<a href='excluirProfessor.php?codigoProfessor=$row[codigoProfessor]'>" ?> <i class="material-icons">delete</i> <?php echo "</a>" ?> </td>
+
+                                   <td> <?php echo "<a href='formularioAlterarTipoUsuario.php?codigoTipoUsuario=$row[codigoProfessor]'>" ?> <i class="material-icons">mode edit</i> <?php echo "</a>" ?> </td>
+
+                                   <!-- /*Enviando a matrícula por método GET para EXCLUIR e EDITAR os dados*/ -->
+                                    
+                                    <?php
+
+                                    echo "<><input type='image' src='../imagem/editar.png' height='25' width='25' class='icones'/></a>";
                                     echo "<hr>";
                                 }
                             } else {
@@ -40,6 +49,9 @@
                             }
                             mysqli_close($conn);
                             ?>
+                </tr>
+                </tbody>
+                </table>
             </div>
     </div>
 </div>
