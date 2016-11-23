@@ -16,42 +16,36 @@
 <div class="valign-wrapper container row formulario">
     <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
         <h2>Listar Professores</h2>
-            <div class="col s10 left-align">
-                <table class="highlight">
-                <tbody>
-                <tr>
-                 <?php
-                            require_once 'conexao.php';
+            <div class="col s12 left-align">
+                <div class="row col s12 left-align">
+                    <?php
+                    require_once 'conexao.php';
 
-                            $sql = "SELECT codigoProfessor, nome, telefone FROM professor";
-                            $query = mysqli_query($conn, $sql) or die("Não foi possível listar os dados " . mysqli_error($conn));
+                    $sql = "SELECT codigoProfessor, nome, telefone FROM professor";
+                    $query = mysqli_query($conn, $sql) or die("Não foi possível listar os dados " . mysqli_error($conn));
 
-                            if (mysqli_num_rows($query) > 0) {
+                    if (mysqli_num_rows($query) > 0) {
 
-                                while ($row = mysqli_fetch_assoc($query)) {
-                                    ?>
+                        while ($row = mysqli_fetch_assoc($query)) {
 
-                                    <td>Nome: <?php echo $row['nome'] ?></td> <td>Telefone: <?php echo $row['telefone'] ?></td>
-                                    <td><?php echo "<a href='excluirProfessor.php?codigoProfessor=$row[codigoProfessor]'>" ?> <i class="material-icons">delete</i> <?php echo "</a>" ?> </td>
+                            echo "<div><label><b>Nome: </b></label>" . $row['nome'] . "&nbsp&nbsp&nbsp";
+                            echo "<label><b>Telefone: </b></label>" . "&nbsp&nbsp&nbsp" . $row['telefone'] ?>  
 
-                                <td> <?php echo "<a href='formularioAlterarTipoUsuario.php?codigoTipoUsuario=$row[codigoProfessor]'>" ?> <i class="material-icons">mode edit</i> <?php echo "</a>" ?> </td>
+                            <!-- *Enviando a matrícula por método GET para EXCLUIR e EDITAR os dados -->
+                            <?php echo "<a href='excluirProfessor.php?codigoProfessor=$row[codigoProfessor]'>"?> <i class="material-icons">delete</i> <?php echo "</a>" ?> 
 
-                                   <!-- /*Enviando a matrícula por método GET para EXCLUIR e EDITAR os dados*/ -->
-                                    
-                                    <?php
+                            <?php echo "<a href='../view/alterarProfessor.php?codigoProfessor=$row[codigoProfessor]'>"?> <i class="material-icons">edit</i> <?php echo "</a>" ?> 
 
-                                    echo "<><input type='image' src='../imagem/editar.png' height='25' width='25' class='icones'/></a>";
-                                    echo "<hr>";
-                                }
-                            } else {
+                            <?php "</div>";
+                            
+                        }
+                    } else {
 
-                                echo "<script type='text/javascript'>alert('Não há registros no banco de dados');location.href='../view/cadastroTipoUsuario.html';</script>";
-                            }
-                            mysqli_close($conn);
-                            ?>
-                </tr>
-                </tbody>
-                </table>
+                        echo "<script type='text/javascript'>alert('Não há registros no banco de dados');location.href='../view/cadastroTipoUsuario.html';</script>";
+                    }
+                    mysqli_close($conn);
+                    ?>
+                 </div>    
             </div>
     </div>
 </div>
