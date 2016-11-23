@@ -34,7 +34,7 @@
                                     <td>Nome: <?php echo $row['nome'] ?></td> <td>Telefone: <?php echo $row['telefone'] ?></td>
                                     <td><?php echo "<a href='excluirProfessor.php?codigoProfessor=$row[codigoProfessor]'>" ?> <i class="material-icons">delete</i> <?php echo "</a>" ?> </td>
 
-                                   <td> <?php echo "<a href='formularioAlterarTipoUsuario.php?codigoTipoUsuario=$row[codigoProfessor]'>" ?> <i class="material-icons">mode edit</i> <?php echo "</a>" ?> </td>
+                                <td> <?php echo "<a href='formularioAlterarTipoUsuario.php?codigoTipoUsuario=$row[codigoProfessor]'>" ?> <i class="material-icons">mode edit</i> <?php echo "</a>" ?> </td>
 
                                    <!-- /*Enviando a matrícula por método GET para EXCLUIR e EDITAR os dados*/ -->
                                     

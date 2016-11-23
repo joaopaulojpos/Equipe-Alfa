@@ -24,7 +24,7 @@ if (isset($_POST['codigoProfessor'])) {
                 echo "<script type='text/javascript'>alert('Este Professor já encontra-se cadastrado');location.href='../view/cadastroProfessor.html'</script>";
             } else {
                 //Se tudo estiver OK, insere o registro no banco de dados
-                $insert = "INSERT INTO professor(codigoProfessor, nome, telefone) VALUES('$codigoProfessor', '$nome', 'telefone')";
+                $insert = "INSERT INTO professor(codigoProfessor, nome, telefone) VALUES('$codigoProfessor', '$nome', '$telefone')";
                 $result = mysqli_query($conn, $insert) or die("Falha no cadastro do tipo de usuário. " . mysqli_error($conn));
 
                 if ($result) {
