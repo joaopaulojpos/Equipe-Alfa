@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>Sistema de Gerenciamento Acadêmico</title>
-    <!--Import Google Icon Font-->
-     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" href="../csss/materialize.css">
-    <link rel="stylesheet" href="../csss/custom.css">
+<?php require_once 'includes/cabecalhocss.php'; ?>
 
-</head>
 <body class="#37474f blue-grey darken-3">
 
 <div class="valign-wrapper container row formulario">
@@ -57,3 +46,5 @@
         </form>
     </div>
 </div>
+
+<?php require_once 'includes/rodapecss.php'; ?>

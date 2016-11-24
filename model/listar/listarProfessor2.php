@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>Sistema de Gerenciamento Acadêmico</title>
-    <!--Import Google Icon Font-->
-     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" href="../csss/materialize.css">
-    <link rel="stylesheet" href="../csss/custom.css">
+<?php require_once '../../view/includes/cabecalhocss.php'; ?>
 
-</head>
 <body class="#37474f blue-grey darken-3">
 
 <div class="valign-wrapper container row formulario">
@@ -19,7 +8,7 @@
             <div class="col s12 left-align">
                 <div class="row col s12 left-align">
                     <?php
-                    require_once 'conexao.php';
+                    require_once '../conexao.php';
 
                     $sql = "SELECT codigoProfessor, nome, telefone FROM professor";
                     $query = mysqli_query($conn, $sql) or die("Não foi possível listar os dados " . mysqli_error($conn));
@@ -50,10 +39,4 @@
     </div>
 </div>
 
-<!-- Materialize JS -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<!-- Materialize JS -->
-<script src="../js/materialize.js"></script>
-
-</body>
-</html>
+<?php require_once '../../view/includes/rodapecss.php'; ?>
