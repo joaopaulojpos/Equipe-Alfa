@@ -1,0 +1,104 @@
+/*CSS Login,Cadastro Usuario,Lista Tipo Usuario*/
+body
+{
+    background-color: #e0dcdc;
+}
+#formlogin
+{	
+    padding: 20px;	
+    height: 110px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+#formcadastro
+{	
+    padding: 5px;
+    width: 270px;
+    height: 50px;
+    margin-left: 70px;
+    margin-top: 20px;
+}
+#tituloCadastroU{
+    text-align: center;
+    color: #2a2727;
+}
+.titulo{
+    color:#2a2727;
+}
+.botao
+{
+    background-color: #2a2727;
+    color: #ffffff;	
+    border-radius: 13px;
+    width: 80px;
+    height: 30px;
+}
+#btncd
+{
+    margin-left: 94px;
+}
+.btnlg
+{
+    background-color: #2a2727;
+    color:#ffffff;	
+    border-radius: 13px;
+    width: 90px;
+    height: 30px;
+    margin-top: 5px;
+
+}
+label
+{
+    display: inline-block;
+    width: 65px;
+    color: #ffffff;
+}
+#fieldsetcadastro
+{
+    background-color: #9b9595;
+    margin-top: 50px;
+    margin-left: 430px;
+    height: 470px;
+    width: 250px;
+    padding: 30px;
+    border-style: double;
+}
+#fieldsetlogin
+{
+    background-color: #9b9595;
+    margin-top: 130px;
+    margin-left: 480px;
+    height: 300px;
+    width:  280px;
+    padding: 30px;
+    border-style: double;
+}
+#codigoTipoUsuario
+{	
+    width: 170px;
+}
+#fieldListarTpU{
+    background-color: #9b9595;
+    padding: 30px;
+    height: 250px;
+    width: 600px;
+    margin-left: 350px;
+    margin-top: 150px;
+}
+#divscrowbar{
+    overflow-y: auto;
+    height: 110px;
+}
+.icones{
+    border-radius: 15px;
+    float:right;
+    margin-top: -20px;
+    margin-right: 5px;
+}
+.inputs
+{
+    background-color: #dcdada;
+    height: 20px;
+    width: 175px;
+    border-radius: 13px;    
+}

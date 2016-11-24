@@ -1,0 +1,23 @@
+/*CSS Início Usuarios*/
+body
+{
+    background-color: #e0dcdc;
+}
+h2
+{
+    color: #2a2727;
+    font-size: 30px;
+}
+.botao
+{
+    background-color: #2a2727;
+    color: #ffffff;
+    border-radius: 13px;
+    height: 30px;
+    width: 80px;
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #000000;
+}
