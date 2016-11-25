@@ -1,4 +1,4 @@
-<?php require_once '../../view/includes/cabecalhocss.php'; ?>
+<?php require_once 'includes/cabecalhocss.php'; ?>
 
 <body class="#37474f blue-grey darken-3">
 
@@ -8,7 +8,7 @@
             <div class="col s12 left-align">
                 <div class="row col s12 left-align">
                     <?php
-                    require_once '../conexao.php';
+                    require_once '../model/conexao.php';
 
                     $sql = "SELECT codigoProfessor, nome, telefone FROM professor";
                     $query = mysqli_query($conn, $sql) or die("Não foi possível listar os dados " . mysqli_error($conn));
@@ -21,7 +21,7 @@
                             echo "<label><b>Telefone: </b></label>" . "&nbsp&nbsp&nbsp" . $row['telefone'] ?>  
 
                             <!-- *Enviando a matrícula por método GET para EXCLUIR e EDITAR os dados -->
-                            <?php echo "<a href='excluirProfessor.php?codigoProfessor=$row[codigoProfessor]'>"?> <i class="material-icons">delete</i> <?php echo "</a>" ?> 
+                            <?php echo "<a href='../model/excluir/excluirProfessor.php?codigoProfessor=$row[codigoProfessor]'>"?> <i class="material-icons">delete</i> <?php echo "</a>" ?> 
 
                             <?php echo "<a href='../view/alterarProfessor.php?codigoProfessor=$row[codigoProfessor]'>"?> <i class="material-icons">edit</i> <?php echo "</a>" ?> 
 
@@ -30,7 +30,7 @@
                         }
                     } else {
 
-                        echo "<script type='text/javascript'>alert('Não há registros no banco de dados');location.href='../view/cadastroTipoUsuario.html';</script>";
+                        echo "<script type='text/javascript'>alert('Não há registros no banco de dados');location.href='view/cadastroProfessor.php';</script>";
                     }
                     mysqli_close($conn);
                     ?>
@@ -39,4 +39,4 @@
     </div>
 </div>
 
-<?php require_once '../../view/includes/rodapecss.php'; ?>
+<?php require_once 'includes/rodapecss.php'; ?>
