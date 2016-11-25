@@ -19,7 +19,7 @@ require_once 'includes/cabecalhocss.php';
 
 <div class="valign-wrapper container row formulario">
     <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
-        <h2>Alterar Professor 2</h2>
+        <h2>Alterar Professor</h2>
 
         <form method="POST" action="../model/alterar/alterarProfessor.php">
 
