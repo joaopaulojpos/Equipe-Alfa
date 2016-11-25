@@ -21,7 +21,7 @@
                             echo "<label><b>Telefone: </b></label>" . "&nbsp&nbsp&nbsp" . $row['telefone'] ?>  
 
                             <!-- *Enviando a matrícula por método GET para EXCLUIR e EDITAR os dados -->
-                            <?php echo "<a href='excluirProfessor.php?codigoProfessor=$row[codigoProfessor]'>"?> <i class="material-icons">delete</i> <?php echo "</a>" ?> 
+                            <?php echo "<a href='../model/excluir/excluirProfessor.php?codigoProfessor=$row[codigoProfessor]'>"?> <i class="material-icons">delete</i> <?php echo "</a>" ?> 
 
                             <?php echo "<a href='../view/alterarProfessor.php?codigoProfessor=$row[codigoProfessor]'>"?> <i class="material-icons">edit</i> <?php echo "</a>" ?> 
 
@@ -30,7 +30,7 @@
                         }
                     } else {
 
-                        echo "<script type='text/javascript'>alert('Não há registros no banco de dados');location.href='../view/cadastroTipoUsuario.html';</script>";
+                        echo "<script type='text/javascript'>alert('Não há registros no banco de dados');location.href='view/cadastroProfessor.php';</script>";
                     }
                     mysqli_close($conn);
                     ?>

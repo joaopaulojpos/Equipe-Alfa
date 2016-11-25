@@ -11,26 +11,15 @@ $query = mysqli_query($conn, $sql) or die("Não foi possível resgatar os dados 
 $row = mysqli_fetch_assoc($query);
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>Sistema de Gerenciamento Acadêmico</title>
-    <!--Import Google Icon Font-->
-     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" href="../csss/materialize.css">
-    <link rel="stylesheet" href="../csss/custom.css">
+<?php require_once 'includes/cabecalhocss.php'; ?>
 
-</head>
 <body class="#37474f blue-grey darken-3">
 
 <div class="valign-wrapper container row formulario">
     <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
-        <h2>Alterar Professor</h2>
+        <h2>Alterar Professor 2</h2>
 
-        <form method="POST" action="../model/alterarProfessor.php">
+        <form method="POST" action="../model/alterar/alterarProfessor.php">
 
         <div class="row input-field col s6 left-align">
         <input id="codigoProfessor" type="number" min="1" name="codigoProfessor" class="validate" value="<?php echo $row['codigoProfessor']; ?>">
@@ -55,7 +44,7 @@ $row = mysqli_fetch_assoc($query);
         </div>
 
         <div class="row col s4 center-align">
-        <a class="btn waves-effect waves-light" href="../model/listarProfessor2.php">Voltar</a>
+        <a class="btn waves-effect waves-light" href="listarProfessor.php">Voltar</a>
         </div>
 
         <br>
@@ -63,10 +52,4 @@ $row = mysqli_fetch_assoc($query);
     </div>
 </div>
 
-<!-- Materialize JS -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<!-- Materialize JS -->
-<script src="../js/materialize.js"></script>
-
-</body>
-</html>
+<?php require_once 'includes/cabecalhocss.php'; ?>
