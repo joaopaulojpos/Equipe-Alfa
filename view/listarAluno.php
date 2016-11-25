@@ -109,11 +109,11 @@
 				</table>							
 				<br/>
                 <div class="row col s4 left-align">
-				<a class="btn waves-effect waves-light" href="../../view/cadastrarAluno.php">Voltar</a></div> 
+				<a class="btn waves-effect waves-light" href="../cadastrarAluno.php">Voltar</a></div> 
 				</div>
 				<?php else:?>
 
-                <script type='text/javascript'>alert('Não há registro de alunos no banco de dados!');location.href='../../view/cadastrarAluno.php';</script>
+                <script type='text/javascript'>alert('Não há registro de alunos no banco de dados!');location.href='../cadastrarAluno.php';</script>
 				
 				<?php endif?>
 			<?php endif;?>
