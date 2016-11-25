@@ -17,7 +17,7 @@
 			
 		<div class="valign-wrapper container row formulario">           
 		<div class="col s12 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">		
-        <?php require_once '../conexao.php'; ?>
+        <?php require_once '../model/conexao.php'; ?>
 
         <?php if (isset($_POST['matriculaAluno'])):?>
 
@@ -101,19 +101,19 @@
 								<td><?php echo $row['nomeAluno'] ?></td>
 								<td><?php echo $row['sexoAluno'] ?></td>
 								<td><?php echo $row['telefone'] ?></td>
-								<td><a href="../excluir/excluirAluno.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>"><i class="material-icons">delete</i></a>
-								<a href="../../view/editarAluno.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>"><i class="material-icons">edit</i></a></td>
+								<td><a href="../model/excluir/excluirAluno.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>"><i class="material-icons">delete</i></a>
+								<a href="editarAluno.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>"><i class="material-icons">edit</i></a></td>
 							</tr>                        
                 <?php endwhile; ?> 						
 					</tbody>						
 				</table>							
 				<br/>
                 <div class="row col s4 left-align">
-				<a class="btn waves-effect waves-light" href="../cadastrarAluno.php">Voltar</a></div> 
+				<a class="btn waves-effect waves-light" href="cadastrarAluno.php">Voltar</a></div> 
 				</div>
 				<?php else:?>
 
-                <script type='text/javascript'>alert('Não há registro de alunos no banco de dados!');location.href='../cadastrarAluno.php';</script>
+                <script type='text/javascript'>alert('Não há registro de alunos no banco de dados!');location.href='cadastrarAluno.php';</script>
 				
 				<?php endif?>
 			<?php endif;?>

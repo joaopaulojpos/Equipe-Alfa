@@ -57,7 +57,7 @@ $dataNascimento = date("d/m/Y", strtotime($row['dataNascimento']));
 					</button>
 					</div>
 					<div class="row col s4 center-align">
-					<a class="btn waves-effect waves-light" href="../model/listar/listarAluno.php">Voltar</a>
+					<a class="btn waves-effect waves-light" href="listarAluno.php">Voltar</a>
 					</div>
 					<br/>
                 </form>

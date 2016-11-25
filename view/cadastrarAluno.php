@@ -43,7 +43,7 @@
         </div>
 
         <div class="row col s4 center-align">
-        <a class="btn waves-effect waves-light" href="../model/listar/listarAluno.php">Listar</a>
+        <a class="btn waves-effect waves-light" href="listarAluno.php">Listar</a>
         </div>
 
         <div class="row col s4 rigth-align">
