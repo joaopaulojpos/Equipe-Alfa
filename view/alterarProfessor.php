@@ -9,9 +9,11 @@ $codigoProfessor = $_GET['codigoProfessor'];
 $sql = "SELECT codigoProfessor, nome, telefone FROM Professor WHERE codigoProfessor = '$codigoProfessor'";
 $query = mysqli_query($conn, $sql) or die("Não foi possível resgatar os dados do BD " . mysqli_error($conn));
 $row = mysqli_fetch_assoc($query);
+
+require_once 'includes/cabecalhocss.php';
 ?>
 
-<?php require_once 'includes/cabecalhocss.php'; ?>
+
 
 <body class="#37474f blue-grey darken-3">
 
@@ -52,4 +54,4 @@ $row = mysqli_fetch_assoc($query);
     </div>
 </div>
 
-<?php require_once 'includes/cabecalhocss.php'; ?>
+<?php require_once 'includes/rodapecss.php'; ?>

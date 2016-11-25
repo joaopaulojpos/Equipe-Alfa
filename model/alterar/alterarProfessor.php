@@ -1,6 +1,6 @@
 <?php
 
-require_once 'conexao.php';
+require_once '../conexao.php';
 
     $codigoProfessor = $_POST['codigoProfessor'];
     $telefone = $_POST['telefone'];
@@ -12,7 +12,7 @@ require_once 'conexao.php';
     $query = mysqli_query($conn, $sql) or die("Não foi possível alterar os dados " . mysqli_error($conn));
 
 
-    echo "<script type='text/javascript'>alert('Dados alterados com sucesso!');location.href='listarProfessor2.php';</script>";
+    echo "<script type='text/javascript'>alert('Dados alterados com sucesso!');location.href='../../view/listarProfessor.php';</script>";
 
     mysqli_close($conn);
 
