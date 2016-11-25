@@ -13,8 +13,6 @@ $row = mysqli_fetch_assoc($query);
 require_once 'includes/cabecalhocss.php';
 ?>
 
-
-
 <body class="#37474f blue-grey darken-3">
 
 <div class="valign-wrapper container row formulario">
