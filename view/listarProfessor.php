@@ -23,7 +23,7 @@
                             <!-- *Enviando a matrícula por método GET para EXCLUIR e EDITAR os dados -->
                             <?php echo "<a href='../model/excluir/excluirProfessor.php?codigoProfessor=$row[codigoProfessor]'>"?> <i class="material-icons">delete</i> <?php echo "</a>" ?> 
 
-                            <?php echo "<a href='../view/alterarProfessor.php?codigoProfessor=$row[codigoProfessor]'>"?> <i class="material-icons">edit</i> <?php echo "</a>" ?> 
+                            <?php echo "<a href='../view/editarProfessor.php?codigoProfessor=$row[codigoProfessor]'>"?> <i class="material-icons">edit</i> <?php echo "</a>" ?> 
 
                             <?php "</div>";
                             
