@@ -7,9 +7,9 @@
 		<!--Import Google Icon Font-->
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!-- Materialize CSS -->
-		<link rel="stylesheet" href="../../csss/materialize.css">
-		<link rel="stylesheet" href="../../csss/materialize.min.css">
-		<link rel="stylesheet" href="../../csss/custom.css">
+		<link rel="stylesheet" href="../css/materialize.css">
+		<link rel="stylesheet" href="../css/materialize.min.css">
+		<link rel="stylesheet" href="../css/custom.css">
 	</head>
 
     <body class="#37474f blue-grey darken-3">    

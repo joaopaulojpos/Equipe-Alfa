@@ -23,7 +23,7 @@
     	 Entrar	
         </button>
 
-        <a class="btn waves-effect waves-light" href="../view/cadastroUsuario.html">Cadastre - Se</a>
+        <a class="btn waves-effect waves-light" href="cadastrarUsuario.php">Cadastre - Se</a>
 
         </div>
         <br>
