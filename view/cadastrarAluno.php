@@ -1,4 +1,4 @@
-<?php require_once 'includes/cabecalhocss.php'; ?>
+<?php require_once '../view/includes/cabecalhocss.php'; ?>
 
 <body class="#37474f blue-grey darken-3">
 
@@ -6,7 +6,7 @@
 	<div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
 	    <h2>Cadastrar Aluno</h2>
 
-		<form method="POST" action="../model/cadastroAluno.php">
+		<form method="POST" action="../model/cadastrar/cadastroAluno.php">
 
 	    <div class="row input-field col s12 left-align">
             <input type="text" id="nomeAluno" name="nomeAluno">
@@ -24,8 +24,8 @@
         </div>
 
         <div class="row input-field col s6 left-align">
-            <select>
-                <option value="" disabled selected>Sexo</option>
+            <select name="sexoAluno">
+                <option value="" selected="selected">Sexo</option>
                 <option value="F">Feminino</option>
                 <option value="M">Masculino</option>
             </select>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="row col s4 center-align">
-        <a class="btn waves-effect waves-light" href="../model/listarAluno.php">Listar</a>
+        <a class="btn waves-effect waves-light" href="../model/listar/listarAluno.php">Listar</a>
         </div>
 
         <div class="row col s4 rigth-align">

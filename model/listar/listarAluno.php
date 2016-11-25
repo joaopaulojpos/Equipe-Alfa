@@ -1,90 +1,137 @@
 <!DOCTYPE html>
-<html>
-    <head lang="pt-br">
-        <meta charset="utf-8">
-        <title>Lista de Alunos</title>
-        <link rel="stylesheet" href="../css/listarAluno.css">
-    </head>
-    <body>
-        <?php
-        
-        require_once 'conexao.php';
+<html lang="pt-br">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>Sistema de Gerenciamento Acadêmico</title>
+		<!--Import Google Icon Font-->
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- Materialize CSS -->
+		<link rel="stylesheet" href="../../csss/materialize.css">
+		<link rel="stylesheet" href="../../csss/materialize.min.css">
+		<link rel="stylesheet" href="../../csss/custom.css">
+	</head>
 
-        if (isset($_POST['matriculaAluno']) || isset($_POST['nomeAluno'])) {
+    <body class="#37474f blue-grey darken-3">    
+                  			
+			
+		<div class="valign-wrapper container row formulario">           
+		<div class="col s12 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">		
+        <?php require_once '../conexao.php'; ?>
 
-            $matriculaAluno = $_POST['matriculaAluno'];
-            $nomeAluno = $_POST['nomeAluno'];           
+        <?php if (isset($_POST['matriculaAluno'])):?>
+
+		  <?php $matriculaAluno = $_POST['matriculaAluno'];				          
                 //SQL para PESQUISAR aluno escolhido por MATRÍCULA ou por NOME
-                $sql = "SELECT matriculaAluno, dataNascimento, nomeAluno, sexoAluno, telefone FROM aluno WHERE  nomeAluno = '$nomeAluno' OR matriculaAluno = '$matriculaAluno'";
-                $query = mysqli_query($conn, $sql) or die("Falha ao buscar o aluno. Erro: " . mysqli_error($conn));
-
-
-                echo "<fieldset>";
-                while ($row = mysqli_fetch_assoc($query)) {
-
-                    echo "<h2><b>Resultado da Pesquisa</b></h2>";
-                    echo "<hr>";
-                    echo "<label><b>Matricula: </b></label> " . $row['matriculaAluno'] . " ";
-                    echo "<label><b>Data Nascimento: </b></label>" . date('d/m/Y', strtotime($row['dataNascimento'])) . " ";
-                    echo "<label><b>Nome: </b></label>" . $row['nomeAluno'] . " ";
-                    echo "<label><b>Sexo: </b></label>" . $row['sexoAluno'] . " ";
-                    echo "<label><b>Telefone: </b></label>" . $row['telefone'] . "<br/>";
-                    echo "<br/><br/>";
-                }
-                echo "<a href='listarAluno.php'><input type='button' value='Voltar' class='botao'></a>";
-                echo "</fieldset>";
-        } else {
-            //SQL para LISTAR os dados dos alunos
+                $sql = "SELECT matriculaAluno, dataNascimento, nomeAluno, sexoAluno, telefone FROM aluno WHERE matriculaAluno = '$matriculaAluno'";
+                $query = mysqli_query($conn, $sql) or die("Falha ao buscar o aluno. Erro: " . mysqli_error($conn))?>
+				
+				<h2><b>Resultado da Pesquisa</b></h2>
+					<div>
+					<table>
+						<tbody>
+							<thead>
+								<tr>
+									<th><b>Matrícula</b></th>
+									<th><b>Data Nasc.</b></th>
+									<th><b>Nome</b></th>
+									<th><b>Sexo</b></th>
+									<th><b>Telefone</b></th>
+								</tr>
+							</thead>	
+                
+                <?php while ($row = mysqli_fetch_assoc($query)): ?>
+						
+							<tr>
+                                <td><?php echo $row['matriculaAluno'] ?></td>
+								<td><?php echo date('d/m/Y', strtotime($row['dataNascimento'])) ?></td>
+								<td><?php echo $row['nomeAluno'] ?></td>
+								<td><?php echo $row['sexoAluno'] ?></td>
+								<td><?php echo $row['telefone'] ?></td>
+							</tr>
+             
+                <?php endwhile; ?>
+						</tbody>
+					</table>
+					</div>
+					<br/>
+				<div class="row col s4 left-align">
+                <a href='listarAluno.php' class="btn waves-effect waves-light">Voltar</a>
+                </div>     
+			<?php else: ?>
+            <?php //SQL para LISTAR os dados dos alunos
             $sql = "SELECT matriculaAluno, dataNascimento, nomeAluno, sexoAluno, telefone FROM aluno";
-            $query = mysqli_query($conn, $sql) or die("Não foi possível listar os dados do aluno.\n Erro: " . mysql_error($conn));
+            $query = mysqli_query($conn, $sql) or die("Não foi possível listar os dados do aluno.\n Erro: " . mysql_error($conn));?>
 
-            if (mysqli_num_rows($query) > 0) {
-
-                echo "<fieldset>";
-                echo "<h2><b>Lista de Alunos</b></h2>";
-                echo "<hr>";
-                echo "<br/><br/>";
-                echo "<div id='divscrowbar'>";
-
-                while ($row = mysqli_fetch_assoc($query)) {
-
-                    echo "<div><label><b>Matricula: </b></label> " . $row['matriculaAluno'] . " ";
-                    echo "<label><b>Data Nascimento: </b></label> " . date('d/m/Y', strtotime($row['dataNascimento'])) . " ";
-                    echo "<label><b>Nome: </b></label> " . $row['nomeAluno'] . " ";
-                    echo "<label><b>Sexo: </b></label> " . $row['sexoAluno'] . " ";
-                    echo "<label><b>Telefone: </b></label> " . $row['telefone'] . " " . "</div>";
-                    ?>	
-                    <!--Enviando a matrícula por método GET para EXCLUIR e EDITAR os dados do aluno-->
-                    <div id='links'><a href="excluirAluno.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>" id='linkexcluir'><input type="image" src="../imagem/lixeira1.png" width="25" height="25" id="icone"></a>&nbsp
-                        <a href="formularioAlterarAluno.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>" id='linkeditar'><input type="image" src="../imagem/editar.png" width="25" height="25" id="icone"></a></div>	
-
-                    <?php
-                    echo "<hr><br/>";
-                }
-                echo "</div>";
-                echo "<br/><br/>";
-                echo "<a href='listarAluno.php'><input type='button' value='Atualizar' class='botao'/></a>" . " ";
-                echo "<a href='../view/cadastroAluno.html'><input type='button' value='Voltar' class='botao'/></a>";
-                echo"</fieldset>";
-
-                mysqli_close($conn);
-            } else {
-
-                echo "<script type='text/javascript'>alert('Não há registro de alunos no banco de dados!');location.href='../view/cadastroAluno.html';</script>";
-            }
-        }
-        ?>
-        <div>
-            <fieldset>
-                <h2><b>Buscar Aluno</b></h2>
-                <hr>
-                <form method="post" action="">
-                    <label for="matriculaAluno"><b>Matrícula:</b> </label><input type="text" id="matriculaAluno" name="matriculaAluno"/>
-                    <input type="submit" value="Buscar" class="botao">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <label for="nomeAluno"><b>Nome:</b> </label><input type="text" id="nomeAluno" name="nomeAluno"/>
-                    <input type="submit" value="Buscar" class="botao">				
+            <?php if (mysqli_num_rows($query) > 0):?>
+                
+                <h2><b>Lista de Alunos</b></h2>
+				<br>
+				<div>
+				<form method="post" action="">				
+					<div class="row input-field col s8 left-align">
+						<input type="text" id="matriculaAluno" name="matriculaAluno"/>					
+						<label for="matriculaAluno"><b>Matrícula:</b></label>
+					</div>
+					<div>
+						<button type="submit" class="btn-floating btn-small waves-effect waves-teal"><i class="material-icons right-align">search</i></button></td>					
+					</div>						
                 </form>
-            </fieldset>
-        </div>
-    </body>
+				</div>
+				<br/><br/> 
+				<div>
+				<table class="highlight">				
+					<tbody>							
+						<thead>
+							<tr>
+								<th>Matrícula</th>
+								<th>Data Nasc.</th>
+								<th>Nome</th>
+								<th>Sexo</th>
+								<th>Telefone</th>
+								<th>Ações</th>
+							</tr>							
+						</thead>
+
+                <?php while ($row = mysqli_fetch_assoc($query)): ?>
+				
+							<tr>
+								<td><?php echo $row['matriculaAluno'] ?></td>
+								<td><?php echo date('d/m/Y', strtotime($row['dataNascimento'])) ?></td>
+								<td><?php echo $row['nomeAluno'] ?></td>
+								<td><?php echo $row['sexoAluno'] ?></td>
+								<td><?php echo $row['telefone'] ?></td>
+								<td><a href="../excluir/excluirAluno.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>"><i class="material-icons">delete</i></a>
+								<a href="../../view/editarAluno.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>"><i class="material-icons">edit</i></a></td>
+							</tr>                        
+                <?php endwhile; ?> 						
+					</tbody>						
+				</table>							
+				<br/>
+                <div class="row col s4 left-align">
+				<a class="btn waves-effect waves-light" href="../../view/cadastrarAluno.php">Voltar</a></div> 
+				</div>
+				<?php else:?>
+
+                <script type='text/javascript'>alert('Não há registro de alunos no banco de dados!');location.href='../../view/cadastrarAluno.php';</script>
+				
+				<?php endif?>
+			<?php endif;?>
+			<?php mysqli_close($conn); ?>
+			
+				</div>
+			</div>
+                   
+		<!-- Materialize JS -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!-- Materialize JS -->
+		<script src="../../js/materialize.js"></script>
+		<!--Script para Funcionamento do Option e do Date -->
+		<script>
+			$(document).ready(function(){
+			$('select').material_select();
+			$('.datepicker').pickadate();
+			});
+		</script>
+	</body>
 </html>
