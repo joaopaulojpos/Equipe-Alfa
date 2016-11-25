@@ -4,7 +4,7 @@
 
 <div class="valign-wrapper container row formulario">
     <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
-        <h2>Cadastrar Professor</h2>
+        <h2><b>Cadastrar Professor</b></h2>
 
         <form method="POST" action="../model/cadastrar/cadastroProfessor.php">
 
