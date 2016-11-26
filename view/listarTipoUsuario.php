@@ -12,7 +12,7 @@
                 <hr><br/>
                 <div id="divscrowbar">
                     <?php
-                    require_once 'conexao.php';
+                    require_once '../model/conexao.php';
 
                     $sql = "SELECT codigoTipoUsuario, descricaoTipoUsuario FROM tipoUsuario";
                     $query = mysqli_query($conn, $sql) or die("Não foi possível listar os dados " . mysqli_error($conn));

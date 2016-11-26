@@ -4,18 +4,23 @@
 
 <div class="valign-wrapper container row formulario">
     <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
-        <h2>Cadastrar Tipo</h2>
+        <h2><b>Cadastrar Turmas</b></h2>
 
-        <form method="POST" action="../model/cadastroTipoUsuario.php">
+        <form method="POST" action="../model/cadastrar/cadastroTurma.php">
 
         <div class="row input-field col s6 left-align">
-        <input id="codigoTipoUsuario" type="number" min="1" max="10" name="codigoTipoUsuario" class="validate">
-        <label for="codigoTipoUsuario">Codigo</label>
+        <input id="codigoProfessor" type="number" min="1" name="codigoProfessor" class="validate">
+        <label for="codigoProfessor">Codigo</label>
         </div>
 
-        <div class="row input-field col s6 left-align">
-            <input type="text" id="descricaoTipoUsuario" name="descricaoTipoUsuario">
-            <label for="descricaoTipoUsuario">Descrição</label>
+       <div class="row input-field col s6 left-align">
+            <input type="tel" id="telefone" name="telefone">
+            <label for="telefone">Telefone</label>
+        </div>
+
+        <div class="row input-field col s12 left-align">
+            <input type="text" id="nomeProfessor" name="nomeProfessor">
+            <label for="nomeProfessor">Nome do Professor</label>
         </div>
 
 
@@ -26,7 +31,7 @@
         </div>
 
         <div class="row col s4 center-align">
-        <a class="btn waves-effect waves-light" href="../model/listarTipoUsuario.php">Listar</a>
+        <a class="btn waves-effect waves-light" href="../view/listarProfessor.php">Listar</a>
         </div>
 
         <div class="row col s4 rigth-align">
