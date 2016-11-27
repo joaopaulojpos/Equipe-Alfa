@@ -1,15 +1,41 @@
-<?php
-require_once 'conexao.php';
+<?php require_once 'includes/cabecalhocss.php'; ?>
 
-if(isset($_POST['codigoPeriodo'])){
-$codigoPeriodo = $_POST['codigoPeriodo'];
-$tipoEnsino = $_POST['tipoEnsino'];
+<body class="#37474f blue-grey darken-3">
 
-$sql = ("INSERT INTO periodo (codigoPeriodo, tipoEnsino) VALUES('$codigoPeriodo','$tipoEnsino')");
-$query = mysqli_query($conn,$sql) or die("Não foi possível cadastrar o tipo de ensino " . mysqli_error($conn));
+<div class="valign-wrapper container row formulario">
+    <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
+        <h2><b>Cadastrar Periodo</b></h2>
 
-echo "<script type='text/javascript'>alert('Cadastro realizado com sucesso!');location.href='listarPeriodo.php'</script>";
+        <form method="POST" action="../model/cadastrar/cadastroPeriodo.php">
 
-mysqli_close($conn);
-}
-?>
+        <div class="row input-field col s6 left-align">
+        <input id="codigoPeriodo" type="number" min="1" max="10" name="codigoPeriodo" class="validate">
+        <label for="codigoPeriodo">Codigo</label>
+        </div>
+
+        <div class="row input-field col s6 left-align">
+            <input type="text" id="tipoEnsino" name="tipoEnsino">
+            <label for="tipoEnsino">Descrição Periodo</label>
+        </div>
+
+
+        <div class="row col s4 left-align btnform">
+        <button class="btn waves-effect waves-ligth" type="submit" name="cadastrar">
+         Cadastrar  
+        </button>
+        </div>
+
+        <div class="row col s4 center-align">
+        <a class="btn waves-effect waves-light" href="../view/listarPeriodo.php">Listar</a>
+        </div>
+
+        <div class="row col s4 rigth-align">
+        <a class="btn waves-effect waves-light" href="../view/inicioAdministrador.html">Voltar</a>
+        </div>
+
+        <br>
+        </form>
+    </div>
+</div>
+
+<?php require_once 'includes/rodapecss.php'; ?>

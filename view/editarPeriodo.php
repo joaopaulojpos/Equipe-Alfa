@@ -1,37 +1,49 @@
 <?php
-	require_once 'conexao.php';
+require_once '../model/conexao.php';
 
-	if(isset($_GET['codigoPeriodo'])){
-	$codigoPeriodo = $_GET['codigoPeriodo'];
+$codigoPeriodo = $_GET['codigoPeriodo'];
 
-	$sql = "SELECT codigoPeriodo, tipoEnsino FROM periodo WHERE codigoPeriodo = '$codigoPeriodo'";
-	$query = mysqli_query($conn,$sql) or die("Não foi possível selecionar o registro!" . mysqli_error($conn));
+/*
+ * Retornando os dados do banco de dados para o formulário para que possam ser alterados
+ */
+$sql = "SELECT codigoPeriodo, tipoEnsino FROM periodo WHERE codigoPeriodo = '$codigoPeriodo'";
+$query = mysqli_query($conn, $sql) or die("Não foi possível resgatar os dados do BD " . mysqli_error($conn));
+$row = mysqli_fetch_assoc($query);
 
-
-	while($linha = mysqli_fetch_assoc($query)){
-	$codigoPeriodo = $linha['codigoPeriodo'];
-	$tipoEnsino = $linha['tipoEnsino'];
-	}
-}
+require_once 'includes/cabecalhocss.php';
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-	<head>
-		<meta charset="utf-8">
-		<title>Editar Período</title>
-		<link rel="stylesheet" href="estilo.css">
-	</head>
-	<body>
-		<div>
-			<form method="post" action="alterarPeriodo.php">
-				<fieldset>
-				<legend id="lgdcad">Cadastro de Períodos</legend>
-				<label>Código Período: </label><br/><input type="text" id=codigoPeriodo name="codigoPeriodo" value="<?php echo $codigoPeriodo; ?>"><br/><br/>
-				<label>Tipo Ensino: </label><br/><input type="text" id="tipoEnsino" name="tipoEnsino" value="<?php echo $tipoEnsino; ?>" /><br/><br/>
-				<input type="submit" value="Alterar"/>
-				<input type="button" value="Lista" onclick="location.href='listarPeriodo.php'"/>
-				</fieldset>
-			</form>
-		</div>
-	</body>
-</html>
+
+<body class="#37474f blue-grey darken-3">
+
+<div class="valign-wrapper container row formulario">
+    <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
+        <h2><b>Alterar Nivel</b></h2>
+
+        <form method="POST" action="../model/alterar/alterarPeriodo.php">
+
+        <div class="row input-field col s6 left-align">
+        <input id="codigoPeriodo" type="number" min="1" name="codigoPeriodo" class="validate" value="<?php echo $row['codigoPeriodo']; ?>">
+        <label for="codigoPeriodo">Codigo</label>
+        </div>
+
+        <div class="row input-field col s6 left-align">
+            <input type="text" id="tipoEnsino" name="tipoEnsino" value="<?php echo $row['tipoEnsino'] ?>">
+            <label for="tipoEnsino">Descrição</label>
+        </div>
+
+        <div class="row col s4 left-align btnform">
+        <button class="btn waves-effect waves-ligth" type="submit" name="alterar">
+         Alterar
+        </button>
+        </div>
+
+        <div class="row col s4 center-align">
+        <a class="btn waves-effect waves-light" href="listarPeriodo.php">Voltar</a>
+        </div>
+
+        <br>
+        </form>
+    </div>
+</div>
+
+<?php require_once 'includes/rodapecss.php'; ?>
