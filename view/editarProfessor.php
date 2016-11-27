@@ -38,7 +38,7 @@ require_once 'includes/cabecalhocss.php';
 
 
         <div class="row col s4 left-align btnform">
-        <button class="btn waves-effect waves-ligth" type="submit" name="entrar">
+        <button class="btn waves-effect waves-ligth" type="submit" name="alterar">
          Alterar
         </button>
         </div>

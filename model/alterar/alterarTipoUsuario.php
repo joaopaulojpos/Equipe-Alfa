@@ -1,6 +1,6 @@
 <?php
 
-require_once 'conexao.php';
+require_once '../conexao.php';
 
     $codigoTipoUsuario = $_POST['codigoTipoUsuario'];
     $descricaoTipoUsuario = $_POST['descricaoTipoUsuario'];
@@ -11,7 +11,7 @@ require_once 'conexao.php';
     $query = mysqli_query($conn, $sql) or die("Não foi possível alterar os dados " . mysqli_error($conn));
 
 
-    echo "<script type='text/javascript'>alert('Dados alterados com sucesso!');location.href='listarTipoUsuario.php';</script>";
+    echo "<script type='text/javascript'>alert('Dados alterados com sucesso!');location.href='../../view/listarTipoUsuario.php';</script>";
 
     mysqli_close($conn);
 
