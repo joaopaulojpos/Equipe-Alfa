@@ -10,22 +10,22 @@
 
 	    <div class="row input-field col s12 left-align">
             <input type="text" id="nomeAluno" name="nomeAluno">
-            <label for="nomeAluno">Nome</label>
+            <label for="nomeAluno">Nome:</label>
         </div>
 
         <div class="row input-field col s6 left-align">
         <input id="matriculaAluno" type="text" name="matriculaAluno" class="validate">
-        <label for="matriculaAluno">Matricula</label>
+        <label for="matriculaAluno">Matrícula:</label>
         </div>
 
         <div class="row input-field col s6 left-align">
         <input id="dataNascimento" type="date" name="dataNascimento" class="datepicker">
-        <label for="dataNascimento">Data Nascimento</label>
+        <label for="dataNascimento">Data Nascimento:</label>
         </div>
 
         <div class="row input-field col s6 left-align">
             <select name="sexoAluno">
-                <option value="" selected="selected">Sexo</option>
+                <option value="" selected="selected">Sexo:</option>
                 <option value="F">Feminino</option>
                 <option value="M">Masculino</option>
             </select>
@@ -33,23 +33,22 @@
 
         <div class="row input-field col s6 left-align">
             <input type="tel" id="telefone" name="telefone">
-            <label for="telefone">Telefone</label>
+            <label for="telefone">Telefone:</label>
         </div>
 
         <div class="row col s4 left-align btnform">
-        <button class="btn waves-effect waves-ligth" type="submit" name="entrar">
+        <button class="btn waves-effect waves-ligth" type="submit" name="cadastrar">
     	 Cadastrar	
         </button>
         </div>
 
         <div class="row col s4 center-align">
-        <a class="btn waves-effect waves-light" href="listarAluno.php">Listar</a>
+        <button class="btn waves-effect waves-light" type="button" name="listar" onclick="location.href='listarAluno.php'">Listar</button>
         </div>
 
         <div class="row col s4 rigth-align">
-        <a class="btn waves-effect waves-light" href="inicioAdministrador.php">Voltar</a>
+        <button class="btn waves-effect waves-light" type="button" name="voltar" onclick="location.href='inicioAdministrador.php'">Voltar</button>
         </div>
-
         <br>
         </form>
 	</div>

@@ -9,13 +9,17 @@
         <form method="POST" action="../model/cadastrar/cadastrarTipoUsuario.php">
 
         <div class="row input-field col s6 left-align">
-        <input id="codigoTipoUsuario" type="number" min="1" max="10" name="codigoTipoUsuario" class="validate">
-        <label for="codigoTipoUsuario">Codigo</label>
+        <input id="codigoTipoUsuario" type="number" min="1" max="3" name="codigoTipoUsuario" class="validate">
+        <label for="codigoTipoUsuario">Código</label>
         </div>
 
         <div class="row input-field col s6 left-align">
-            <input type="text" id="descricaoTipoUsuario" name="descricaoTipoUsuario">
-            <label for="descricaoTipoUsuario">Descrição</label>
+            <select name="descricaoTipoUsuario">
+                <option value="">Tipo Usuário:</option>
+                <option value="administrador">Administrador</option>
+                <option value="professor">Professor</option>
+                <option value="aluno">Aluno</option>
+            </select>
         </div>
 
 

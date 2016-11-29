@@ -9,26 +9,21 @@
         <form method="POST" action="../model/cadastrar/cadastrarUsuario.php">
 
         <div class="row input-field col s6 left-align">
-            <input type="text" id="codigoUsuario" name="codigoUsuario">
-            <label for="codigoUsuario">Código</label>
-        </div>
-
-        <div class="row input-field col s6 left-align">
         <input id="codigoTipoUsuario" type="number" min="1" max="3" name="codigoTipoUsuario" class="validate">
         <label for="codigoTipoUsuario">Tipo</label>
         </div>
 
-        <div class="row input-field col s12 left-align">
+        <div class="row input-field col s6 left-align">
             <input type="text" id="usuarioLogin" name="usuarioLogin">
             <label for="usuarioLogin">Login</label>
         </div>
 
-         <div class="row input-field col s12 left-align">
+         <div class="row input-field col s6 left-align">
         <input id="senha" type="password" name="senha" class="validate">
         <label for="senha">Senha</label>
          </div>
 
-        <div class="row input-field col s12 left-align">
+        <div class="row input-field col s6 left-align">
         <input id="confirmarSenha" type="password" name="confirmarSenha" class="validate">
         <label for="confirmarSenha">Confirmar</label>
          </div>

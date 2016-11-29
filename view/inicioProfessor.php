@@ -6,7 +6,7 @@
 				<h2>Início Professor</h2>
 				<ul>								
 				<div class="row input-field col s12 left-align"/>
-					<li><a href="">=> Inserir falta</a></li>
+					<li><a href="cadastrarFalta.php">=> Inserir falta</a></li>
 				</div>				
 
 				<div class="row input-field col s12 left-align"/>

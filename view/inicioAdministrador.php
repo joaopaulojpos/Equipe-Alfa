@@ -6,23 +6,27 @@
                 <h2>Início Administrador</h2>
                 <ul>
                     <div class="row input-field col s12 left-align"/>
-                        <li><a href='cadastrarTurma.php'><b>=> Formulário para cadastro de turma</b></a></li>
+                        <li><a href='cadastrarTurma.php'><b>=> Cadastrar turma</b></a></li>
                     </div>                    
 
                     <div class="row input-field col s12 left-align"/>
-                        <li><a href='cadastrarAluno.php'><b>=> Formulário para cadastro de alunos</b></a></li>
+                        <li><a href='cadastrarAluno.php'><b>=> Cadastrar aluno</b></a></li>
                     </div>
 
                     <div class="row input-field col s12 left-align"/>
-                        <li><a href='cadastrarperiodo.php'><b>=> Formulário para cadastro de período</b></a></li>
+                        <li><a href='cadastrarperiodo.php'><b>=> Cadastrar período</b></a></li>
                     </div>
 
                     <div class="row input-field col s12 left-align"/>
-                        <li><a href='cadastrarProfessor.php'><b>=> Formulário para cadastro de professores</b></a></li>
+                        <li><a href=''><b>=> Cadastrar disciplina</b></a></li>
                     </div>
 
                     <div class="row input-field col s12 left-align"/>
-                        <li><a href='cadastrarTipoUsuario.php'><b>=> Formulário para cadastro de tipos de usuários</b></a></li>
+                        <li><a href='cadastrarProfessor.php'><b>=> Cadastrar professor</b></a></li>
+                    </div>
+
+                    <div class="row input-field col s12 left-align"/>
+                        <li><a href='cadastrarTipoUsuario.php'><b>=> Cadastrar tipo de usuário</b></a></li>
                     </div>
                     
                 </ul>
