@@ -6,7 +6,7 @@ $codigoPeriodo = $_GET['codigoPeriodo'];
 /*
  * Retornando os dados do banco de dados para o formulário para que possam ser alterados
  */
-$sql = "SELECT codigoPeriodo, tipoEnsino FROM periodo WHERE codigoPeriodo = '$codigoPeriodo'";
+$sql = "SELECT codigoPeriodo, numeroPeriodo, tipoEnsino FROM periodo WHERE codigoPeriodo = '$codigoPeriodo'";
 $query = mysqli_query($conn, $sql) or die("Não foi possível resgatar os dados do BD " . mysqli_error($conn));
 $row = mysqli_fetch_assoc($query);
 
@@ -22,11 +22,16 @@ require_once 'includes/cabecalhocss.php';
         <form method="POST" action="../model/alterar/alterarPeriodo.php">
 
         <div class="row input-field col s6 left-align">
-        <input id="codigoPeriodo" type="number" min="1" name="codigoPeriodo" class="validate" value="<?php echo $row['codigoPeriodo']; ?>">
+        <input id="codigoPeriodo" type="text" min="1" name="codigoPeriodo" class="validate" value="<?php echo $row['codigoPeriodo']; ?>">
         <label for="codigoPeriodo">Codigo</label>
         </div>
 
         <div class="row input-field col s6 left-align">
+        <input id="numeroPeriodo" type="text" min="1" name="numeroPeriodo" class="validate" value="<?php echo $row['numeroPeriodo']; ?>">
+        <label for="numeroPeriodo">Período</label>
+        </div>
+
+        <div class="row input-field col s12 left-align">
             <input type="text" id="tipoEnsino" name="tipoEnsino" value="<?php echo $row['tipoEnsino'] ?>">
             <label for="tipoEnsino">Descrição</label>
         </div>
@@ -37,7 +42,7 @@ require_once 'includes/cabecalhocss.php';
         </button>
         </div>
 
-        <div class="row col s4 center-align">
+        <div class="row col s4 left-align">
         <a class="btn waves-effect waves-light" href="listarPeriodo.php">Voltar</a>
         </div>
 

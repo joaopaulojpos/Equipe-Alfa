@@ -30,7 +30,7 @@
         </div>
 
         <div class="row col s4 center-align">
-        <button class="btn waves-effect waves-ligth" type="button" name="cadastrar">
+        <button class="btn waves-effect waves-ligth" type="button" name="listar" onclick="location.href='listarPeriodo.php'">
          Listar 
         </button>
         </div>
