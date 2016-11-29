@@ -1,5 +1,5 @@
-/*CREATE DATABASE faculdade;*/
-/*USE faculdade;*/
+/*CREATE SCHEMA faculdade;
+USE faculdade;*/
 
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
@@ -15,7 +15,7 @@ create table ALUNO
    MATRICULAALUNO       int unsigned not null,
    DATANASCIMENTO       date,
    NOMEALUNO            varchar(50),
-   SEXOALUNO           	char(1),
+   SEXOALUNO            char(1),
    TELEFONE             varchar(15),
    primary key (MATRICULAALUNO)
 );
@@ -39,7 +39,7 @@ create table DISCIPLINATURMA
    CODIGODISCIPLINA      int unsigned,
    CODIGOPROFESSOR       int unsigned,
    CODIGOTURMA           int unsigned,
-   CODIGONOTA            int unsigned,
+   CODIGONOTA            int,
    primary key (CODIGODISCIPLINATURMA)
 );
 
@@ -50,9 +50,10 @@ create table FALTA
 (
    MATRICULAALUNO        int unsigned,
    CODIGODISCIPLINATURMA int unsigned,
-   ABONO                 varchar(50),
-   MOTIVO                varchar(50),
-   DATA                  date
+   MÊS                   varchar(15),
+   FALTAS                int unsigned,
+   ABONO                 varchar(5),
+   MOTIVO                varchar(50)   
 );
 
 /*==============================================================*/
@@ -65,7 +66,7 @@ create table NOTA
    RECUPERACAO          varchar(10),
    FINAL                varchar(10),
    TIPONOTA             VARCHAR(10),
-   SITUACAO             VARCHAR(15)
+   SITUACAO             VARCHAR(15),
    primary key (CODIGONOTA)
 );
 
@@ -87,7 +88,7 @@ create table NOTACONCEITO
 create table NOTANUMERO
 (
    CODIGONOTA           int not null,
-   MATRICULAALUNO       int not null
+   MATRICULAALUNO       int not null,
    NOTA1                varchar(10),
    NOTA2                varchar(10)
 );
@@ -137,7 +138,7 @@ create table PERIODO
 /*==============================================================*/
 create table TIPOUSUARIO
 (
-   CODIGOTIPOUSUARIO    int UNSIGNED not null,
+   CODIGOTIPOUSUARIO    int not null,
    DESCRICAOTIPOUSUARIO varchar(50),
    primary key (CODIGOTIPOUSUARIO)
 );
@@ -159,8 +160,8 @@ create table TURMA
 /*==============================================================*/
 create table USUARIO
 (
-   CODIGOUSUARIO        int unsigned not null,
-   CODIGOTIPOUSUARIO    int unsigned,
+   CODIGOUSUARIO        int auto_increment,
+   CODIGOTIPOUSUARIO    int not null,
    USUARIOLOGIN         varchar(50),
    SENHA                int unsigned,
    CONFIRMARSENHA       int unsigned,   
@@ -210,4 +211,4 @@ alter table TURMA add constraint FK_TURMA_PERIODO foreign key (CODIGOPERIODO)
       references PERIODO (CODIGOPERIODO) on delete CASCADE on update CASCADE;
       
 alter table USUARIO add constraint FK_USUARIO_TIPOUSUARIO foreign key (CODIGOTIPOUSUARIO)
-	  references TIPOUSUARIO (CODIGOTIPOUSUARIO) on delete CASCADE on update CASCADE;
+     references TIPOUSUARIO (CODIGOTIPOUSUARIO) on delete CASCADE on update CASCADE;
