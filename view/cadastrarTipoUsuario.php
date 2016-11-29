@@ -6,7 +6,7 @@
     <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
         <h2><b>Cadastrar Tipo</b></h2>
 
-        <form method="POST" action="../model/cadastrar/cadastroTipoUsuario.php">
+        <form method="POST" action="../model/cadastrar/cadastrarTipoUsuario.php">
 
         <div class="row input-field col s6 left-align">
         <input id="codigoTipoUsuario" type="number" min="1" max="10" name="codigoTipoUsuario" class="validate">

@@ -6,7 +6,7 @@
 	<div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
 	    <h2>Cadastrar Aluno</h2>
 
-		<form method="POST" action="../model/cadastrar/cadastroAluno.php">
+		<form method="POST" action="../model/cadastrar/cadastrarAluno.php">
 
 	    <div class="row input-field col s12 left-align">
             <input type="text" id="nomeAluno" name="nomeAluno">

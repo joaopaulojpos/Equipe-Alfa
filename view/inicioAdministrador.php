@@ -6,7 +6,15 @@
                 <h2>Início Administrador</h2>
                 <ul>
                     <div class="row input-field col s12 left-align"/>
+                        <li><a href='cadastrarTurma.php'><b>=> Formulário para cadastro de turma</b></a></li>
+                    </div>                    
+
+                    <div class="row input-field col s12 left-align"/>
                         <li><a href='cadastrarAluno.php'><b>=> Formulário para cadastro de alunos</b></a></li>
+                    </div>
+
+                    <div class="row input-field col s12 left-align"/>
+                        <li><a href='cadastrarperiodo.php'><b>=> Formulário para cadastro de período</b></a></li>
                     </div>
 
                     <div class="row input-field col s12 left-align"/>

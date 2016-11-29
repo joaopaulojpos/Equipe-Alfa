@@ -49,7 +49,7 @@ if (isset($_POST['matriculaAluno'])) {
                                         $result = mysqli_query($conn, $insert) or die("Não foi possível cadastrar o aluno. " . mysqli_error($conn));
 
                                         if ($result) {
-                                            echo "<script type='text/javascript'>alert('Aluno cadastrado com sucesso!');location.href='../listar/listarAluno.php';</script>";
+                                            echo "<script type='text/javascript'>alert('Aluno cadastrado com sucesso!');location.href='../../view/listarAluno.php';</script>";
                                         } else {
                                             echo "<script type='text/javascript'>alert('Não foi possível cadastrar este aluno');location.href='../../view/cadastrarAluno.php';</script>";
                                         }
