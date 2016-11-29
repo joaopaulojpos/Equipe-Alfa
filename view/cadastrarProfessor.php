@@ -31,11 +31,11 @@
         </div>
 
         <div class="row col s4 center-align">
-        <a class="btn waves-effect waves-light" href="../view/listarProfessor.php">Listar</a>
+        <a class="btn waves-effect waves-light" href="listarProfessor.php">Listar</a>
         </div>
 
         <div class="row col s4 rigth-align">
-        <a class="btn waves-effect waves-light" href="../view/inicioAdministrador.html">Voltar</a>
+        <a class="btn waves-effect waves-light" href="inicioAdministrador.php">Voltar</a>
         </div>
 
         <br>

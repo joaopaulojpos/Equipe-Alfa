@@ -47,7 +47,7 @@
         </div>
 
         <div class="row col s4 rigth-align">
-        <a class="btn waves-effect waves-light" href="../view/inicioAdministrador.html">Voltar</a>
+        <a class="btn waves-effect waves-light" href="inicioAdministrador.php">Voltar</a>
         </div>
 
         <br>

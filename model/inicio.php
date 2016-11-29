@@ -16,20 +16,20 @@ if (isset($login_cookie)) {
         if ($codigoTipoUsuario == 1) {
 
             //echo "Acessível apenas para administradores";
-            header('Location:../view/inicioAdministrador.html');
+            header('Location:../view/inicioAdministrador.php');
         } else {
             if ($codigoTipoUsuario == 2) {
 
                 //echo "Acessível apenas para professores";
-                header('Location:../view/inicioProfessor.html');
+                header('Location:../view/inicioProfessor.php');
             } else {
                 if ($codigoTipoUsuario == 3) {
 
-                    //echo "Assessível para alunos";
-                    header('Location:../view/inicioAluno.html');
+                    //echo "Acessível para alunos";
+                    header('Location:../view/inicioAluno.php');
                 } else {
 
-                    echo "<script type='text/javascript'>alert(Faça seu cadastro para poder acessar o sistema!);location.href='../view/cadastroUsuario.html';</script>";
+                    echo "<script type='text/javascript'>alert(Faça seu cadastro para poder acessar o sistema!);location.href='../view/cadastroUsuario.php';</script>";
                 }
             }
         }

@@ -6,11 +6,11 @@
     <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
         <h2>Cadastro Usuário</h2>
 
-        <form method="POST" action="../model/cadastroUsuario.php">
+        <form method="POST" action="../model/cadastrar/cadastrarUsuario.php">
 
         <div class="row input-field col s6 left-align">
             <input type="text" id="codigoUsuario" name="codigoUsuario">
-            <label for="codigoUsuario">Codigo</label>
+            <label for="codigoUsuario">Código</label>
         </div>
 
         <div class="row input-field col s6 left-align">
@@ -39,7 +39,7 @@
         </button>
         </div>
         <div class="row col s4 left-align">
-        <a class="btn waves-effect waves-light" href="../view/login.html">Voltar</a>
+        <a class="btn waves-effect waves-light" href="../view/index.php">Voltar</a>
         </div>
 
         <br>
