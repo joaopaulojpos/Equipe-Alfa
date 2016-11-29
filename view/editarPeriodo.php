@@ -17,23 +17,23 @@ require_once 'includes/cabecalhocss.php';
 
 <div class="valign-wrapper container row formulario">
     <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
-        <h2><b>Alterar Nivel</b></h2>
+        <h2><b>Alterar Período</b></h2>
 
         <form method="POST" action="../model/alterar/alterarPeriodo.php">
 
         <div class="row input-field col s6 left-align">
-        <input id="codigoPeriodo" type="text" min="1" name="codigoPeriodo" class="validate" value="<?php echo $row['codigoPeriodo']; ?>">
-        <label for="codigoPeriodo">Codigo</label>
+        <input id="codigoPeriodo" type="text" name="codigoPeriodo" class="validate" value="<?php echo $row['codigoPeriodo']; ?>">
+        <label for="codigoPeriodo">Codigo:</label>
         </div>
 
         <div class="row input-field col s6 left-align">
-        <input id="numeroPeriodo" type="text" min="1" name="numeroPeriodo" class="validate" value="<?php echo $row['numeroPeriodo']; ?>">
-        <label for="numeroPeriodo">Período</label>
+        <input id="numeroPeriodo" type="text" name="numeroPeriodo" class="validate" value="<?php echo $row['numeroPeriodo']; ?>">
+        <label for="numeroPeriodo">Período:</label>
         </div>
 
         <div class="row input-field col s12 left-align">
             <input type="text" id="tipoEnsino" name="tipoEnsino" value="<?php echo $row['tipoEnsino'] ?>">
-            <label for="tipoEnsino">Descrição</label>
+            <label for="tipoEnsino">Descrição:</label>
         </div>
 
         <div class="row col s4 left-align btnform">

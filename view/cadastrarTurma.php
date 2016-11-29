@@ -10,7 +10,7 @@
 
         <div class="row input-field col s6 left-align">
         <input id="codigoPeriodo" type="number" min="1" max="10" name="codigoPeriodo" class="validate">
-        <label for="codigoPeriodo">Código do Período:</label>
+        <label for="codigoPeriodo">Código Período:</label>
         </div>
 
         <div class="row input-field col s6 left-align">
@@ -31,7 +31,12 @@
         <button class="btn waves-effect waves-ligth" type="submit" name="cadastrar">
          Cadastrar  
         </button>
-        </div>      
+        </div>    
+
+        <div class="row col s4 center-align">
+         <button class="btn waves-effect waves-ligth" type="button" name="listar" onclick="location.href='listarTurma.php'">Listar  
+        </button>
+        </div>  
 
         <div class="row col s4 rigth-align">
          <button class="btn waves-effect waves-ligth" type="button" name="voltar" onclick="location.href='inicioAdministrador.php'">Voltar  
