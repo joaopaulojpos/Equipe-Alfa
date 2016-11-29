@@ -20,6 +20,7 @@
 	$matricula1 = $row1['matriculaAluno'];
 
 
+
 if($matriculaAluno == $matricula1){
 
 	if($matriculaAluno != $matricula){	
@@ -66,7 +67,11 @@ if($matriculaAluno == $matricula1){
 						echo "<script type='text/javascript'>alert('A nota deste aluno já encontra cadastrada!');location.href='../../view/cadastrarNota.php';</script>";
 					}
 
-					}else{
+					}else 
+						if($matriculaAluno == null){
+
+							echo "<script type='text/javascript'>alert('O campo matricula aluno deve ser preenchido!');location.href='../../view/cadastrarNota.php';</script>";
+						}else{
 
 			echo "<script type='text/javascript'>alert('O aluno de matrícula $matriculaAluno não encontra-se cadastrado!');location.href='../../view/cadastrarNota.php';</script>";
 		}

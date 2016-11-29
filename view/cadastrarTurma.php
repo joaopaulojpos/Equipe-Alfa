@@ -4,40 +4,39 @@
 
 <div class="valign-wrapper container row formulario">
     <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
-        <h2><b>Cadastrar Turmas</b></h2>
+        <h2><b>Cadastrar Turma</b></h2>
 
-        <form method="POST" action="../model/cadastrar/cadastroTurma.php">
+        <form method="POST" action="../model/cadastrar/cadastrarTurma.php">
 
         <div class="row input-field col s6 left-align">
-        <input id="codigoProfessor" type="number" min="1" name="codigoProfessor" class="validate">
-        <label for="codigoProfessor">Codigo</label>
+        <input id="codigoPeriodo" type="number" min="1" max="10" name="codigoPeriodo" class="validate">
+        <label for="codigoPeriodo">Código do Período:</label>
         </div>
 
-       <div class="row input-field col s6 left-align">
-            <input type="tel" id="telefone" name="telefone">
-            <label for="telefone">Telefone</label>
+        <div class="row input-field col s6 left-align">
+        <input id="ano" type="number" min="2016" max="2116" name="ano" class="validate">
+        <label for="ano">Ano</label>
         </div>
 
-        <div class="row input-field col s12 left-align">
-            <input type="text" id="nomeProfessor" name="nomeProfessor">
-            <label for="nomeProfessor">Nome do Professor</label>
+       <div class="row input-field col s12 left-align">
+            <select name="turno">
+                <option value="">Turno:</option>
+                <option value="manha">Manhã</option>
+                <option value="tarde">Tarde</option>
+                <option value="noite">Noite</option>
+            </select>
         </div>
-
 
         <div class="row col s4 left-align btnform">
-        <button class="btn waves-effect waves-ligth" type="submit" name="entrar">
+        <button class="btn waves-effect waves-ligth" type="submit" name="cadastrar">
          Cadastrar  
         </button>
-        </div>
-
-        <div class="row col s4 center-align">
-        <a class="btn waves-effect waves-light" href="../view/listarProfessor.php">Listar</a>
-        </div>
+        </div>      
 
         <div class="row col s4 rigth-align">
-        <a class="btn waves-effect waves-light" href="../view/inicioAdministrador.html">Voltar</a>
+         <button class="btn waves-effect waves-ligth" type="button" name="voltar" onclick="location.href='inicioAdministrador.php'">Voltar  
+        </button>
         </div>
-
         <br>
         </form>
     </div>

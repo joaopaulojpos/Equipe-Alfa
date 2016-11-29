@@ -4,12 +4,8 @@
 <div class="valign-wrapper container row formulario">
 	<div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
 		<h2>Cadastrar Faltas</h2>
-		<form method="post" action="../model/cadastrar/cadastrarFalta.php">
-            
-			<div class="row input-field col s12 left-align">
-        		<input id="codigoDisciplinaTurma" type="number" min="1" max="100" name="codigoDisciplinaTurma">
-        		<label for="codigoDisciplinaTurma">Código:</label>
-        	</div>
+		<form method="post" action="../model/cadastrar/cadastrarFalta.php">            
+			
             <div class="row input-field col s6 left-align">
                 <input id="matriculaAluno" type="text" name="matriculaAluno">
                 <label for="matriculaAluno">Matrícula:</label>

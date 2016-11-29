@@ -1,8 +1,7 @@
 <?php
 	require_once '../conexao.php';
 
-	if(isset($_POST['codigoDisciplinaTurma'])){
-		$codigoDisciplinaTurma = $_POST['codigoDisciplinaTurma'];
+	if(isset($_POST['matriculaAluno'])){		
 		$matriculaAluno = $_POST['matriculaAluno'];
 		$mes = $_POST['mes'];
 		$faltas = $_POST['faltas'];
@@ -10,10 +9,10 @@
 		$motivo = $_POST['motivo'];
 
 
-	/*$sql = "SELECT codigoDisciplinaTurma FROM presenca INNER JOIN disciplinaTurma WHERE matriculaAluno = '$matriculaAluno'";
+	$sql = "SELECT codigoDisciplinaTurma FROM presenca INNER JOIN disciplinaTurma WHERE matriculaAluno = '$matriculaAluno'";
 	$query = mysqli_query($conn,$sql) or die("Código não encontrado! Erro: " . mysqli_error($conn));
 	$row = mysqli_fetch_assoc($query);
-	$codigoDisciplinaTurma = $row['codigoDisciplinaTurma'];*/
+	$codigoDisciplinaTurma = $row['codigoDisciplinaTurma'];
 
 	$sql1 = "SELECT matriculaAluno FROM aluno";
 	$query1 = mysqli_query($conn,$sql1) or die("Matrícula não encontrada! Erro: " . mysqly_error($conn));
@@ -21,10 +20,7 @@
 	$matricula = $row['matriculaAluno'];
 
 
-if($codigoDisciplinaTurma == ""){
 
-			echo "<script type='text/javascript'>alert('O campo código deve ser preenchido!');location.href='../../view/cadastrarFalta.php';</script>";
-}else
 	if($matriculaAluno == "" || $matriculaAluno == null){
 
 					echo "<script type='text/javascript'>alert('O campo matricula deve ser preenchido!');location.href='../../view/cadastrarFalta.php';</script>";
@@ -47,7 +43,7 @@ if($codigoDisciplinaTurma == ""){
 							echo "<script type='text/javascript'>alert('Informe se houve abono ou não sobre a(s) falta(s)!');location.href='../../view/cadastrarFalta.php';</script>";
 						}else{				
 
-	$sql2 = "INSERT INTO falta(codigoDisciplinaTurma, matriculaAluno, mes, faltas, abono, motivo) VALUES('$codigoDisciplinaTurma', '$matriculaAluno', '$mes', '$faltas', '$abono', '$motivo')";
+	$sql2 = "INSERT INTO falta(matriculaAluno, codigoDisciplinaTurma, mes, faltas, abono, motivo) VALUES('$matriculaAluno', '$codigoDisciplinaTurma', '$mes', '$faltas', '$abono', '$motivo')";
 	$query2 = mysqli_query($conn,$sql2) or die("Não foi possível cadastrar a falta! Erro: " . mysqli_error($conn));
 
 	if($query2){
