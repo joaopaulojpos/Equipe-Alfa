@@ -9,8 +9,8 @@
 		<form method="POST" action="../model/login.php" id="formlogin">
 
 	    <div class="row input-field col s12 left-align">
-        <input id="usuarioLogin" type="email" name="usuarioLogin" class="validate">
-        <label for="usuarioLogin">Email</label>
+        <input id="usuarioLogin" type="text" name="usuarioLogin" class="validate">
+        <label for="usuarioLogin">Login</label>
         </div>
 
         <div class="row input-field col s12 left-align">
@@ -18,15 +18,14 @@
         <label for="senha">Senha</label>
         </div>
 
-        <div class="center-align btnform">
-        <button class="btn waves-effect waves-ligth" type="submit" name="entrar">
-    	 Entrar	
-        </button>
-
-        <a class="btn waves-effect waves-light" href="cadastrarUsuario.php">Cadastre - Se</a>
-
-        </div>
-        <br>
+        <div class="row col s4 left-align btn-form">
+        <button class="btn waves-effect waves-ligth" type="submit" name="entrar" onclick="location.href='../model/inicio.php'">
+    	 Entrar</button>
+		</div>
+		
+        <div class="row col s6 left-align">
+		<button class="btn waves-effect waves-light" type="button"	name="cadastrese"	onclick="location.href='cadastrarUsuario.php'">Cadastre - Se</button>
+        </div>      
         </form>
 	</div>
 </div>
