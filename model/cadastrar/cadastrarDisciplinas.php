@@ -5,11 +5,10 @@ require_once '../conexao.php';
 if (isset($_POST['cadastrar'])) {
     $nomeDisciplina = $_POST['nomeDisciplina'];
 
-    $sql = "SELECT nomeDisciplina FROM disciplina";
+    $sql = "SELECT nomeDisciplina FROM disciplina WHERE nomeDisciplina = '$nomeDisciplina'";
     $query = mysqli_query($conn, $sql) or die("Falha ao buscar os dados no BD " . mysqli_error($conn));
-    while($row = mysqli_fetch_assoc($query)){
+    $row = mysqli_fetch_assoc($query);
     $nome = $row['nomeDisciplina'];
-    }
     /*
      * Validação dos campos vazios ou inválidos e evitando registro duplicado
      */    
@@ -24,7 +23,7 @@ if (isset($_POST['cadastrar'])) {
                 $result = mysqli_query($conn, $insert) or die("Falha no cadastro da Disciplina. " . mysqli_error($conn));
 
                 if ($result) {
-                    echo "<script type='text/javascript'>alert('Cadastro concluído com sucesso!');location.href='../../view/listarDisciplinas.php';</script>";
+                    echo "<script type='text/javascript'>alert('Cadastro concluído com sucesso!');location.href='../../view/listarDisciplina.php';</script>";
                 } else {
                     echo "<script type='text/javascript'>alert('Não foi possível concluir o cadastro');location.href='../../view/cadastrarDisciplinas.php'</script>";
                 }
