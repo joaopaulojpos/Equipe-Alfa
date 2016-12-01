@@ -4,8 +4,8 @@
 		<div class="valign-wrapper container row formulario">
 			<div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
 				
-				<ul class="collection with-header">
-       				<li class="collection-header"><h4>Início Aluno</h4></li>
+				<h2>Início Aluno</h2>
+				<ul class="collection with-header">       				
        			    <li class="collection-item left-align"><div>Verificar notas<a href="" class="secondary-content"><i class="material-icons left-align">send</i></a></div></li>
         			<li class="collection-item left-align"><div>Verificar faltas<a href="" class="secondary-content"><i class="material-icons">send</i></a></div></li>        			
       			</ul>				

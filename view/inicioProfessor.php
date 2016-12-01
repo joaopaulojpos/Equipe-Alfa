@@ -4,8 +4,8 @@
 		<div class="valign-wrapper container row formulario">
 			<div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">				
 				
+				<h2>Início Professor</h2>
 				<ul class="collection with-header">
-       				<li class="collection-header"><h4>Início Professor</h4></li>
        			    <li class="collection-item left-align"><div>Inserir falta<a href="cadastrarFalta.php" class="secondary-content"><i class="material-icons left-align">send</i></a></div></li>
         			<li class="collection-item left-align"><div>Cadastrar nota<a href="cadastrarNota.php" class="secondary-content"><i class="material-icons">send</i></a></div></li>
         			<li class="collection-item left-align"><div>Inserir nota número<a href="cadastrarNotaNumero1.php" class="secondary-content"><i class="material-icons">send</i></a></div></li>

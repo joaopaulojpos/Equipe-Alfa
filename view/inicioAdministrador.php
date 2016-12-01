@@ -4,9 +4,8 @@
         <div class="valign-wrapper container row formulario">
             <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
                 
-
-                <ul class="collection with-header">
-                    <li class="collection-header"><h4>Início Administrador</h4></li>
+                <h2>Início Administrador</h2>
+                <ul class="collection with-header">                    
                     <li class="collection-item left-align"><div>Cadastrar turma<a href="cadastrarTurma.php" class="secondary-content"><i class="material-icons left-align">send</i></a></div></li>
                     <li class="collection-item left-align"><div>Cadastrar aluno<a href="cadastrarAluno.php" class="secondary-content"><i class="material-icons">send</i></a></div></li>
                     <li class="collection-item left-align"><div>Cadastar período<a href="cadastrarPeriodo.php" class="secondary-content"><i class="material-icons">send</i></a></div></li>
