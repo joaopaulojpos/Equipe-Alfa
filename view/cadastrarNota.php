@@ -37,7 +37,7 @@
 						<option value="reprovado">Reprovado</option>
 						<option value="matriculado">Matriculado</option>
 					</select>
-				</div>
+				</div>				
 				<div class="row col s4 left-align btnform">
         			<button class="btn waves-effect waves-ligth" type="submit" name="cadastrar">Cadastrar</button>
         		</div>

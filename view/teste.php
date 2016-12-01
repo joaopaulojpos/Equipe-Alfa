@@ -1,43 +1,53 @@
-<?php
-	require_once '../conexao.php';
+<?php require_once '../view/includes/cabecalhocss.php'; ?>
 
-	if(isset($_POST['matriculaAluno'])){
-	$matriculaAluno = $_POST['matriculaAluno'];
-	$conceito1 = $_POST['conceito1'];
-	$conceito2 = $_POST['conceito2'];
+	<body class="#37474f blue-grey darken-3">
 
-		$sql = "SELECT codigoNota FROM nota WHERE matriculaAluno = '$matriculaAluno'";
-		$query = mysqli_query($conn,$sql) or die("Não foi possível pegar o código da nota. Erro: " . mysqli_error($conn));
-		$row = mysqli_fetch_assoc($query);
-		$codigoNota = $row['codigoNota'];
+		<div class="valign-wrapper container row formulario">
+			<div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
+			<h2>Cadastrar Nota</h2>
+			<form method="post" action="../model/cadastrar/cadastrarNota.php">				
 
-		if($conceito1 != null){
-		$sql1 = "INSERT INTO notaConceito(codigoNota, matriculaAluno, conceito1) VALUES('$codigoNota', '$matriculaAluno', '$conceito1')";
-		$query1 = mysqli_query($conn,$sql1);		
+				<div class="row input-field col s12 left-align">
+					<input type="text" id="matriculaAluno" name="matriculaAluno" class="validate" />
+					<label>Matrícula Aluno: </label>
+				</div>
 
-		if($query1){		
+				<div class="row input-field col s6 left-align">
+					<input type="text" id="recuperacao" name="recuperacao"/>
+					<label>Nota Recuperação: </label>
+				</div>
 
-		echo "<script type='text/javascript'>alert('Conceito1 inserido com sucesso!');location.href='../../view/cadastrarNotaConceito.php';</script>";
-	}else{
+				<div class="row input-field col s6 left-align">
+					<input type="text" id="final" name="final"/>
+					<label>Nota Final: </label>
+				</div>
 
-		echo "<script type='text/javascript'>alert('Não foi possível inserir o conceito1!');location.href='../../view/cadastrarNotaConceito.php';</script>";
-	}
+				<div class="row input-field col s6 left-align">
+					<select name="tipoNota">
+						<option value="" selected="selected">Tipo Nota:</option>						
+						<option value="conceito">Conceito</option>
+						<option value="numero">Número</option>						
+					</select>
+				</div>
 
-	}else{
-
-		$sql2 = "UPDATE notaConceito SET conceito2 = '$conceito2' WHERE matriculaAluno = '$matriculaAluno'";
-		$query2 = mysqli_query($conn,$sql2) or die("Não foi possível inserir o conceito2! Erro: " . mysqli_error($conn));
-		
-		if($query2){
-
-			echo "<script type='text/javascript'>alert('Conceito2 inserido com sucesso!');location.href='../../view/cadastrarNotaConceito.php';</script>";
-		}//else{
-
-			//echo "<script type='text/javascript'>alert('Não foi possível inserir o conceito2!');location.href='../../view/cadastrarNotaConceito.php';</script>";
-
-		mysqli_close($conn);
-	}
-	
-}
-	
-?>
+				<div class="row input-field col s6 left-align">
+					<select name="situacao">
+						<option value="" selected="selected">Situacão:</option>						
+						<option value="aprovado">Aprovado</option>
+						<option value="reprovado">Reprovado</option>
+						<option value="matriculado">Matriculado</option>
+					</select>
+				</div>
+				<div class="row col s4 left-align btnform">
+        			<button class="btn waves-effect waves-ligth" type="submit" name="cadastrar">Cadastrar</button>
+        		</div>
+        		<div class="row col s4 center-align">
+        			<button class="btn waves-effect waves-ligth" type="button" name="listar" onclick="location.href='listarNota.php'">Listar</button>
+        		</div>        		
+        		<div class="row col s4 left-align">
+        			<button class="btn waves-effect waves-ligth" type="button" name="voltar" onclick="location.href='inicioProfessor.php'">Voltar</button>
+        		</div>
+			</form>
+			</div>
+		</div>
+<?php require_once 'includes/rodapecss.php'; ?>

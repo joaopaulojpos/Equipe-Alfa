@@ -7,8 +7,12 @@
 		<form method="post" action="../model/cadastrar/cadastrarFalta.php">            
 			
             <div class="row input-field col s6 left-align">
-                <input id="matriculaAluno" type="text" name="matriculaAluno">
+                <input type="text" name="matriculaAluno">
                 <label for="matriculaAluno">Matrícula:</label>
+            </div>
+            <div class="row input-field col s6 left-align">
+                <input type="text" name="disciplina">
+                <label for="disciplina">Disciplina:</label>
             </div>
         	<div class="row input-field col s6 left-align">
         		<select name="mes">
@@ -38,7 +42,7 @@
         			<option value="nao">Não</option>
         		</select>
         	</div>
-        	<div class="row input-field col s12 left-align">
+        	<div class="row input-field col s6 left-align">
         		<input type="text" id="motivo" name="motivo">
         		<label for="motivo">Motivo:</label>        		
         	</div>

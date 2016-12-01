@@ -14,19 +14,20 @@
         </div>
 
         <div class="row col s4 left-align btnform">
-        <button class="btn waves-effect waves-ligth" type="submit" name="entrar">
-         Cadastrar  
+        <button class="btn waves-effect waves-ligth" type="submit" name="cadastrar">
+        Cadastrar
         </button>
         </div>
 
         <div class="row col s4 center-align">
-        <a class="btn waves-effect waves-light" href="listarDisciplinas.php">Listar</a>
+       <button class="btn waves-effect waves-ligth" type="button" name="listar" onclick="location.href='listarDisciplina.php'">
+        Listar</button>
         </div>
 
-        <div class="row col s4 rigth-align">
-        <a class="btn waves-effect waves-light" href="inicioAdministrador.php">Voltar</a>
+        <div class="row col s4 left-align">
+        <button class="btn waves-effect waves-ligth" type="button" name="voltar" onclick="location.href='inicioAdministrador.php'">
+        Voltar</button>
         </div>
-
         <br>
         </form>
     </div>

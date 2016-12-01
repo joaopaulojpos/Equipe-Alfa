@@ -32,11 +32,17 @@
         <button class="btn waves-effect waves-ligth" type="submit" name="entrar">
          Cadastrar  
         </button>
+        </div>        
+        <div class="row col s4 center-align">
+        <button class="btn waves-effect waves-light" type="button" onclick="location.href='../view/cadastrarTipoUsuario.php'"">
+        Tipo
+        </button>
         </div>
         <div class="row col s4 left-align">
-        <a class="btn waves-effect waves-light" href="../view/index.php">Voltar</a>
+        <button class="btn waves-effect waves-light" type="button" onclick="location.href='../view/index.php'"">
+        Voltar
+        </button>
         </div>
-
         <br>
         </form>
     </div>

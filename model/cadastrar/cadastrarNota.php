@@ -9,17 +9,16 @@ if (isset($_POST['cadastrar'])) {
     $tipoNota = $_POST['tipoNota'];
     $situacao = $_POST['situacao'];
 
-    $sql = "SELECT matriculaAluno FROM nota";
+    $sql = "SELECT matriculaAluno FROM nota WHERE matriculaAluno = '$matriculaAluno'";
     $query = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($query);
     $matricula = $row['matriculaAluno'];
 
-      $sql1 = "SELECT matriculaAluno FROM aluno";
+      $sql1 = "SELECT matriculaAluno FROM aluno WHERE matriculaAluno = '$matriculaAluno'";
       $query1 = mysqli_query($conn, $sql1);
-      while($row1 = mysqli_fetch_assoc($query1)){
-      	
-      	$matricula1 = $row1['matriculaAluno'];
-      }
+      $row1 = mysqli_fetch_assoc($query1);      	
+      $matricula1 = $row1['matriculaAluno'];
+      
 
 
     if ($matriculaAluno == "") {
@@ -37,7 +36,7 @@ if (isset($_POST['cadastrar'])) {
     	}else
     		if($matriculaAluno != $matricula1){
 
-    			echo "<script type='text/javascript'>alert('O aluno de matricula $matriculaAluno não existe!');location.href='../../view/cadastrarNota.php';</script>";
+    			echo "<script type='text/javascript'>alert('O aluno de matrícula $matriculaAluno não encontra-se cadastrado!');location.href='../../view/cadastrarNota.php';</script>";
 
     		}else{
 

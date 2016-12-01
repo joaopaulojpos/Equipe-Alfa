@@ -3,13 +3,14 @@
 
 	if(isset($_POST['matriculaAluno'])){		
 		$matriculaAluno = $_POST['matriculaAluno'];
+		$disciplina = $_POST['disciplina'];
 		$mes = $_POST['mes'];
 		$faltas = $_POST['faltas'];
 		$abono = $_POST['abono'];
 		$motivo = $_POST['motivo'];
 
 
-	$sql = "SELECT codigoDisciplinaTurma FROM presenca INNER JOIN disciplinaTurma WHERE matriculaAluno = '$matriculaAluno'";
+	$sql = "SELECT codigoDisciplinaTurma FROM frequencia WHERE matriculaAluno = '$matriculaAluno'";
 	$query = mysqli_query($conn,$sql) or die("Código não encontrado! Erro: " . mysqli_error($conn));
 	$row = mysqli_fetch_assoc($query);
 	$codigoDisciplinaTurma = $row['codigoDisciplinaTurma'];
@@ -21,7 +22,7 @@
 
 
 
-	if($matriculaAluno == "" || $matriculaAluno == null){
+	if($matriculaAluno == ""){
 
 					echo "<script type='text/javascript'>alert('O campo matricula deve ser preenchido!');location.href='../../view/cadastrarFalta.php';</script>";
 	}else
@@ -43,25 +44,14 @@
 							echo "<script type='text/javascript'>alert('Informe se houve abono ou não sobre a(s) falta(s)!');location.href='../../view/cadastrarFalta.php';</script>";
 						}else{				
 
-	$sql2 = "INSERT INTO falta(matriculaAluno, codigoDisciplinaTurma, mes, faltas, abono, motivo) VALUES('$matriculaAluno', '$codigoDisciplinaTurma', '$mes', '$faltas', '$abono', '$motivo')";
-	$query2 = mysqli_query($conn,$sql2) or die("Não foi possível cadastrar a falta! Erro: " . mysqli_error($conn));
+	$sql3 = "INSERT INTO falta(matriculaAluno, codigoDisciplinaTurma, mes, falta, abono, motivo) VALUES('$matriculaAluno', '$codigoDisciplinaTurma', '$mes', '$falta', '$abono', '$motivo')";
+	$query3 = mysqli_query($conn,$sql3) or die("Não foi possível cadastrar a falta! Erro: " . mysqli_error($conn));
 
 	if($query2){
 
 		echo "<script type='text/javascript'>alert('Falta(s) inserida(s) com sucesso!');location.href='../../view/cadastrarFalta.php';</script>";
-	}
-}
-
-	if($faltas != null){
-
-		$sql3 = "UPDATE falta SET faltas = '$faltas' WHERE $matriculaAluno = '$matriculaAluno'";
-		$query3 = mysqli_query($conn,$sql3) or die("Não foi possível atualizar a falta! Erro:" . mysqli_error($conn));
-
-		if($query3){
-
-			echo "<script type='text/javascript'>alert('Falta(s) atualizada(s) com sucesso!');location.href='../../view/cadastrarFalta.php';</script>";
 		}
-	}	
+	}
 
 	mysqli_close($conn);
 }

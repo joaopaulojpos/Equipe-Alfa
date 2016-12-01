@@ -6,8 +6,8 @@
 				
 				<h2>Início Aluno</h2>
 				<ul class="collection with-header">       				
-       			    <li class="collection-item left-align"><div>Verificar notas<a href="" class="secondary-content"><i class="material-icons left-align">send</i></a></div></li>
-        			<li class="collection-item left-align"><div>Verificar faltas<a href="" class="secondary-content"><i class="material-icons">send</i></a></div></li>        			
+       			    <li class="collection-item left-align"><div><span class="teal-text text-lighten-1">Verificar notas</span><a href="" class="secondary-content"><i class="material-icons left-align">send</i></a></div></li>
+        			<li class="collection-item left-align"><div><span class="teal-text text-lighten-1">Verificar faltas</span><a href="" class="secondary-content"><i class="material-icons">send</i></a></div></li>        			
       			</ul>				
 				<div class="row col s4 left-align">
 				<button class="btn waves-effect waves-ligth" type="button" class="botao" onclick=location.href="index.php">Sair</button>
