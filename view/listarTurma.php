@@ -7,7 +7,7 @@
 		<div class="col s12 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">		
         <?php require_once '../model/conexao.php'; ?>                    
                
-            <?php //SQL para LISTAR os Periodos
+            <?php //SQL para LISTAR as Turmas
             $sql = "SELECT codigoTurma, codigoPeriodo, ano, turno FROM turma";
             $query = mysqli_query($conn, $sql) or die("Não foi possível listar a(s) turma(s). Erro: " . mysqli_error($conn));?>
 

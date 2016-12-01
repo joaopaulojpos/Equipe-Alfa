@@ -29,6 +29,9 @@
 					<input class="btn waves-effect waves-ligth" type="submit" value="Inserir" name="inserir"/>
 				</div>
 				<div class="row col s4 left-align">
+					<input class="btn waves-effect waves-ligth" type="button" value="Listar" name="listar" onclick="location.href='listarNotaConceito.php'" />
+				</div>
+				<div class="row col s4 left-align">
 					<input class="btn waves-effect waves-ligth" type="button" value="Voltar" name="voltar" onclick="location.href='inicioProfessor.php'" />
 				</div>
 			</form>

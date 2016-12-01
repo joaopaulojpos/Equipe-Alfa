@@ -7,7 +7,7 @@ $codigoPeriodo = $_GET['codigoPeriodo'];
  * Retornando os dados do banco de dados para o formulário para que possam ser alterados
  */
 $sql = "SELECT codigoPeriodo, numeroPeriodo, tipoEnsino FROM periodo WHERE codigoPeriodo = '$codigoPeriodo'";
-$query = mysqli_query($conn, $sql) or die("Não foi possível resgatar os dados do BD " . mysqli_error($conn));
+$query = mysqli_query($conn, $sql) or die("Não foi possível concluir a operação! Erro: " . mysqli_error($conn));
 $row = mysqli_fetch_assoc($query);
 
 require_once 'includes/cabecalhocss.php';
