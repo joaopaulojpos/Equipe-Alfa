@@ -9,7 +9,7 @@
                
             <?php //SQL para LISTAR as Turmas
             $sql = "SELECT codigoTurma, codigoPeriodo, ano, turno FROM turma";
-            $query = mysqli_query($conn, $sql) or die("Não foi possível listar a(s) turma(s). Erro: " . mysqli_error($conn));?>
+            $query = mysqli_query($conn, $sql) or die("Não foi possível listar a(s) turma(s). Erro: " . mysqli_error($conn)); ?>
 
             <?php if (mysqli_num_rows($query) > 0):?>
                 
@@ -29,16 +29,18 @@
 						</thead>
 
                 <?php while ($row = mysqli_fetch_assoc($query)): ?>
+                	
 
 							<tr>
 								<td><?php echo $row['codigoTurma'] ?></td>
-								<td><?php echo $row['codigoPeriodo'] ?></td>
+								<td><?php echo $row['codigoPeriodo'] ?></td>								
 								<td><?php echo $row['ano']    ?></td>
 								<td><?php echo $row['turno']    ?></td>
 								<td><a href="../model/excluir/excluirTurma.php?codigoTurma=<?php echo $row['codigoTurma']; ?>"><i class="material-icons">delete</i></a>
 								<a href="../view/editarTurma.php?codigoTurma=<?php echo $row['codigoTurma']; ?>"><i class="material-icons">edit</i></a></td>
-							</tr>                        
-                <?php endwhile; ?> 						
+							</tr>     
+						
+                <?php endwhile; ?>
 					</tbody>						
 				</table>							
 				<br/>

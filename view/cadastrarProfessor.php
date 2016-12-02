@@ -10,19 +10,18 @@
 
         <div class="row input-field col s6 left-align">
         <input id="codigoProfessor" type="number" min="1" name="codigoProfessor" class="validate">
-        <label for="codigoProfessor">Codigo</label>
+        <label for="codigoProfessor">Código:</label>
         </div>
 
-       <div class="row input-field col s6 left-align">
+        <div class="row input-field col s6 left-align">
             <input type="tel" id="telefone" name="telefone">
-            <label for="telefone">Telefone</label>
+            <label for="telefone">Telefone:</label>
         </div>
 
         <div class="row input-field col s12 left-align">
             <input type="text" id="nomeProfessor" name="nomeProfessor">
-            <label for="nomeProfessor">Nome do Professor</label>
-        </div>
-
+            <label for="nomeProfessor">Nome do Professor:</label>
+        </div>     
 
         <div class="row col s4 left-align btnform">
         <button class="btn waves-effect waves-ligth" type="submit" name="entrar">

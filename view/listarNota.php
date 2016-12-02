@@ -1,7 +1,6 @@
 <?php require_once 'includes/cabecalhocss.php'; ?>
 
-    <body class="#37474f blue-grey darken-3">    
-                  			
+    <body class="#37474f blue-grey darken-3">                   			
 			
 		<div class="valign-wrapper container row formulario">           
 		<div class="col s12 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">		

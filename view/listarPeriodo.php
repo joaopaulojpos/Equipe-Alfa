@@ -7,13 +7,15 @@
 		<div class="col s12 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">		
         <?php require_once '../model/conexao.php'; ?>                    
                
-            <?php //SQL para LISTAR os Periodos
+            <?php //SQL para LISTAR os Períodos
             $sql = "SELECT codigoPeriodo, numeroPeriodo, tipoEnsino FROM periodo";
-            $query = mysqli_query($conn, $sql) or die("Não foi possível listar os Periodos. Erro: " . mysqli_error($conn));?>
+            $query = mysqli_query($conn, $sql) or die("Não foi possível listar os Periodos. Erro: " . mysqli_error($conn)); ?>
+
+
 
             <?php if (mysqli_num_rows($query) > 0):?>
                 
-                <h2><b>Lista de Periodos</b></h2>
+                <h2><b>Lista de Períodos</b></h2>
 				<br>				
 				<div>
 				<table class="highlight">				

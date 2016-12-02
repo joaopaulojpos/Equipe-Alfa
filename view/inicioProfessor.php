@@ -8,7 +8,7 @@
 				<ul class="collection with-header">
        			    <li class="collection-item left-align"><div><span class="teal-text text-lighten-1">Inserir faltas</span><a href="cadastrarFalta.php" class="secondary-content"><i class="material-icons left-align">send</i></a></div></li>
         			<li class="collection-item left-align"><div><span class="teal-text text-lighten-1">Cadastrar notas</span><a href="cadastrarNota.php" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-        			<li class="collection-item left-align"><div><span class="teal-text text-lighten-1">Inserir notas</span><a href="cadastrarNotaNumero1.php" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+        			<li class="collection-item left-align"><div><span class="teal-text text-lighten-1">Inserir notas</span><a href="cadastrarNotaNumero.php" class="secondary-content"><i class="material-icons">send</i></a></div></li>
         			<li class="collection-item left-align"><div><span class="teal-text text-lighten-1">Inserir conceitos</span><a href="cadastrarNotaConceito.php" class="secondary-content"><i class="material-icons">send</i></a></div></li>
       			</ul>				
 				<div class="row col s4 left-align">
