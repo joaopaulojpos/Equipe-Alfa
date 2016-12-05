@@ -9,11 +9,11 @@ if (isset($_POST['matriculaAluno'])) {
     $sexoAluno = $_POST['sexoAluno'];
     $telefone = $_POST['telefone'];
 
-    $sql = "UPDATE aluno SET dataNascimento = '$dataNascimento', nomeAluno = '$nomeAluno', sexoAluno = '$sexoAluno', telefone = '$telefone' WHERE matriculaAluno = '$matriculaAluno'";
-    $query = mysqli_query($conn, $sql) or die("Falha ao atualizar dados do aluno. Erro: " . mysqli_error($conn));   
+    $sql = "UPDATE aluno SET matriculaAluno = '$matriculaAluno', dataNascimento = '$dataNascimento', nomeAluno = '$nomeAluno', sexoAluno = '$sexoAluno', telefone = '$telefone' WHERE matriculaAluno = '$matriculaAluno'";
+    $query = mysqli_query($conn, $sql) or die("Falha ao atualizar dados do aluno: " . mysqli_error($conn));   
 
     mysqli_close($conn);
 	
-	echo "<script type='text/javascript'>alert('Dados alterados com sucesso!');location.href='../../view/listarAluno.php';</script>";
+	echo "<script type='text/javascript'>alert('Dados alterados com sucesso!');location.href='../listar/listarAluno.php';</script>";
 }
 ?>

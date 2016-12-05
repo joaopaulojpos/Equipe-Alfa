@@ -8,8 +8,10 @@
         <?php require_once '../model/conexao.php'; ?>                    
                
             <?php //SQL para LISTAR os Períodos
-            $sql = "SELECT codigoPeriodo, numeroPeriodo, codigoCurso FROM periodo";
-            $query = mysqli_query($conn, $sql) or die("Não foi possível listar o(s) período(s). Erro: " . mysqli_error($conn)); ?>
+            $sql = "SELECT codigoPeriodo, numeroPeriodo, tipoEnsino FROM periodo";
+            $query = mysqli_query($conn, $sql) or die("Não foi possível listar os Periodos. Erro: " . mysqli_error($conn)); ?>
+
+
 
             <?php if (mysqli_num_rows($query) > 0):?>
                 
@@ -22,20 +24,21 @@
 							<tr>
 								<th>Código</th>
 								<th>Período</th>
-								<th>Curso</th>								
+								<th>Descrição</th>
+								<th>Ações</th>
 							</tr>							
 						</thead>
 
                 <?php while ($row = mysqli_fetch_assoc($query)): ?>
-                	
 
 							<tr>
 								<td><?php echo $row['codigoPeriodo'] ?></td>
 								<td><?php echo $row['numeroPeriodo'] ?></td>
-								<td><?php echo $row['codigoCurso'] ?></td>							
-							</tr>     
-						
-                <?php endwhile; ?>
+								<td><?php echo $row['tipoEnsino']    ?></td>
+								<td><a href="../model/excluir/excluirPeriodo.php?codigoPeriodo=<?php echo $row['codigoPeriodo']; ?>"><i class="material-icons">delete</i></a>
+								<a href="../view/editarPeriodo.php?codigoPeriodo=<?php echo $row['codigoPeriodo']; ?>"><i class="material-icons">edit</i></a></td>
+							</tr>                        
+                <?php endwhile; ?> 						
 					</tbody>						
 				</table>							
 				<br/>
@@ -44,7 +47,7 @@
 				</div>
 				<?php else:?>
 
-                <script type='text/javascript'>alert('Não há registro de períodos no banco de dados!');location.href='cadastrarPeriodo.php';</script>
+                <script type='text/javascript'>alert('Não há registro de Períodos no banco de dados!');location.href='cadastrarPeriodo.php';</script>
 				
 				<?php endif?>
 			

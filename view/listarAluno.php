@@ -10,7 +10,7 @@
         <?php if (isset($_POST['matriculaAluno'])):?>
 
 		  <?php $matriculaAluno = $_POST['matriculaAluno'];				          
-                //SQL para PESQUISAR aluno escolhido por MATRÍCULA
+                //SQL para PESQUISAR aluno escolhido por MATRÍCULA ou por NOME
                 $sql = "SELECT matriculaAluno, dataNascimento, nomeAluno, sexoAluno, telefone FROM aluno WHERE matriculaAluno = '$matriculaAluno'";
                 $query = mysqli_query($conn, $sql) or die("Falha ao buscar o aluno. Erro: " . mysqli_error($conn))?>
 				

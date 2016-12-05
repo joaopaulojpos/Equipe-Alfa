@@ -10,22 +10,22 @@
 
         <div class="row input-field col s6 left-align">
         <input id="codigoTipoUsuario" type="number" min="1" max="3" name="codigoTipoUsuario" class="validate">
-        <label for="codigoTipoUsuario">Tipo:</label>
+        <label for="codigoTipoUsuario">Tipo</label>
         </div>
 
         <div class="row input-field col s6 left-align">
             <input type="text" id="usuarioLogin" name="usuarioLogin">
-            <label for="usuarioLogin">Login:</label>
+            <label for="usuarioLogin">Login</label>
         </div>
 
          <div class="row input-field col s6 left-align">
         <input id="senha" type="password" name="senha" class="validate">
-        <label for="senha">Senha:</label>
+        <label for="senha">Senha</label>
          </div>
 
         <div class="row input-field col s6 left-align">
         <input id="confirmarSenha" type="password" name="confirmarSenha" class="validate">
-        <label for="confirmarSenha">Confirmar:</label>
+        <label for="confirmarSenha">Confirmar</label>
          </div>
 
         <div class="row col s4 left-align">
@@ -33,7 +33,11 @@
          Cadastrar  
         </button>
         </div>        
-        
+        <div class="row col s4 center-align">
+        <button class="btn waves-effect waves-light" type="button" onclick="location.href='../view/cadastrarTipoUsuario.php'"">
+        Tipo
+        </button>
+        </div>
         <div class="row col s4 left-align">
         <button class="btn waves-effect waves-light" type="button" onclick="location.href='../view/index.php'"">
         Voltar

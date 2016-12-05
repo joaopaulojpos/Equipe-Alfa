@@ -8,20 +8,20 @@
 
 		<form method="POST" action="../model/cadastrar/cadastrarAluno.php">
 
+	    <div class="row input-field col s12 left-align">
+            <input type="text" id="nomeAluno" name="nomeAluno">
+            <label for="nomeAluno">Nome:</label>
+        </div>
+
         <div class="row input-field col s6 left-align">
-        <input type="text" name="matriculaAluno" class="validate">
+        <input id="matriculaAluno" type="text" name="matriculaAluno" class="validate">
         <label for="matriculaAluno">Matrícula:</label>
         </div>
 
         <div class="row input-field col s6 left-align">
-        <input type="date" name="dataNascimento" class="datepicker">
+        <input id="dataNascimento" type="date" name="dataNascimento" class="datepicker">
         <label for="dataNascimento">Data Nascimento:</label>
         </div>
-
-	    <div class="row input-field col s12 left-align">
-            <input type="text" name="nomeAluno">
-            <label for="nomeAluno">Nome:</label>
-        </div>        
 
         <div class="row input-field col s6 left-align">
             <select name="sexoAluno">
@@ -32,7 +32,7 @@
         </div>
 
         <div class="row input-field col s6 left-align">
-            <input type="tel" name="telefone">
+            <input type="tel" id="telefone" name="telefone">
             <label for="telefone">Telefone:</label>
         </div>
 

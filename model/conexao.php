@@ -1,8 +1,8 @@
 <?php
 	
 	$servidor = "localhost";
-	$usuario  = "root";
-	$senha    = "12345";
+	$usuario  = "devmaster";
+	$senha    = "dev2016";
 	$banco    = "faculdade";
 
         /*

@@ -6,7 +6,7 @@ $codigoTurma = $_GET['codigoTurma'];
 /*
  * Retornando os dados do banco de dados para o formulário para que possam ser alterados
  */
-$sql = "SELECT codigoTurma, codigoCurso, ano, turno FROM turma WHERE codigoTurma = '$codigoTurma'";
+$sql = "SELECT codigoTurma, codigoPeriodo, ano, turno FROM turma WHERE codigoTurma = '$codigoTurma'";
 $query = mysqli_query($conn, $sql) or die("Não foi possível concluir a operação! Erro: " . mysqli_error($conn));
 $row = mysqli_fetch_assoc($query);
 
@@ -22,22 +22,22 @@ require_once 'includes/cabecalhocss.php';
         <form method="POST" action="../model/alterar/alterarTurma.php">
 
         <div class="row input-field col s6 left-align">
-        <input type="text" name="codigoTurma" class="validate" value="<?php echo $row['codigoTurma']; ?>">
+        <input id="codigoTurma" type="text" name="codigoTurma" class="validate" value="<?php echo $row['codigoTurma']; ?>">
         <label for="codigoTurma">Código:</label>
         </div>
 
         <div class="row input-field col s6 left-align">
-        <input type="text" name="codigoCurso" class="validate" value="<?php echo $row['codigoCurso']; ?>">
-        <label for="codigoCurso">Código Curso:</label>
+        <input id="codigoPeriodo" type="text" name="codigoPeriodo" class="validate" value="<?php echo $row['codigoPeriodo']; ?>">
+        <label for="codigoPeriodo">Código Período:</label>
         </div>
 
         <div class="row input-field col s6 left-align">
-        <input type="text" name="ano" class="validate" value="<?php echo $row['ano']; ?>">
+        <input id="ano" type="text" name="ano" class="validate" value="<?php echo $row['ano']; ?>">
         <label for="ano">Ano:</label>
         </div>
 
         <div class="row input-field col s6 left-align">
-            <input type="text" name="turno" value="<?php echo $row['turno'] ?>">
+            <input type="text" id="turno" name="turno" value="<?php echo $row['turno'] ?>">
             <label for="turno">Turno:</label>
         </div>
 

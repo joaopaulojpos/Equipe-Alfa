@@ -2,14 +2,14 @@
 
 	require_once "../conexao.php";
 
-	if (isset($_POST['codigoCurso'])) {
-		$codigoCurso = $_POST['codigoCurso'];
+	if (isset($_POST['codigoPeriodo'])) {
+		$codigoPeriodo = $_POST['codigoPeriodo'];
     	$ano = $_POST['ano'];
     	$turno = $_POST['turno'];
 
-	if($codigoCurso == null){
+	if($codigoPeriodo == null){
 
-		echo "<script type='text/javascript'>alert('Informe o código do curso!');location.href='../../view/cadastrarTurma.php';</script>";
+		echo "<script type='text/javascript'>alert('Informe o código do período!');location.href='../../view/cadastrarTurma.php';</script>";
 	}else
 		if($ano == null){
 
@@ -20,7 +20,7 @@
 				echo "<script type='text/javascript'>alert('Selecione o turno da turma!');location.href='../../view/cadastrarTurma.php';</script>";
 			}else{
 
-	$sql1 = "INSERT INTO turma(codigoCurso,ano,turno) VALUES('$codigoCurso','$ano','$turno')";
+	$sql1 = "INSERT INTO turma(codigoPeriodo,ano,turno) VALUES('$codigoPeriodo','$ano','$turno')";
 	$query1 = mysqli_query($conn,$sql1) or die("Não foi possível cadastrar a turma! Erro: " . mysqli_error($conn));
 
 	if($query1){
