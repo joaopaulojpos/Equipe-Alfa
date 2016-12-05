@@ -12,43 +12,33 @@ $row = mysqli_fetch_assoc($query);
 $dataNascimento = date("d/m/Y", strtotime($row['dataNascimento']));
 }
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-        <title>Sistema de Gerenciamento Acadêmico</title>
-        <!--Import Google Icon Font-->
-		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<!-- Materialize CSS -->
-		<link rel="stylesheet" href="../csss/materialize.css">
-		<link rel="stylesheet" href="../csss/custom.css">
-    </head>
+<?php require_once '../view/includes/cabecalhocss.php'; ?>
     <body class="#37474f blue-grey darken-3">
         <div class="valign-wrapper container row formulario">
 			<div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
 				<h2><b>Alterar Aluno</b></h2>                
-                <form method="post" action="../model/alterar/alterarAluno.php">
-				
-					<div class="row input-field col s12 left-align">
-						<input type="text" id="nomeAluno" name="nomeAluno" value="<?php echo $row['nomeAluno']; ?>" />
-						<label class="label">Nome: </label>
-					</div>
+                <form method="post" action="../model/alterar/alterarAluno.php">				
+					
+					
+					<input type="hidden" name="matriculaAluno" value="<?php echo $row['matriculaAluno']; ?>"/>
+					
 					<div class="row input-field col s6 left-align">
-						<input type="text" id="matriculaAluno" name="matriculaAluno" value="<?php echo $row['matriculaAluno']; ?>"/>
-						<label class="label">Matrícula: </label>
-					</div>
-					<div class="row input-field col s6 left-align">
-						<input type="text" id="dataNascimento" name="dataNascimento" value="<?php echo $dataNascimento ?>"/>					
-						<label id="dtNasc">Data Nasc.: </label>
+						<input type="text" name="dataNascimento" value="<?php echo $dataNascimento ?>"/>					
+						<label for="dataNascimento">Data Nasc.: </label>
 					</div>					
+
+					<div class="row input-field col s12 left-align">
+						<input type="text" name="nomeAluno" value="<?php echo $row['nomeAluno']; ?>" />
+						<label for="nomeAluno">Nome: </label>
+					</div>
+
 					<div class="row input-field col s6 left-align">
-						<input type="text" id="sexoAluno" name="sexoAluno" value="<?php echo $row['sexoAluno']; ?>"/>
-						<label class="label">Sexo: </label>
+						<input type="text" name="sexoAluno" value="<?php echo $row['sexoAluno']; ?>"/>
+						<label for="sexoAluno">Sexo: </label>
 					</div>
 					<div class="row input-field col s6 left-align">
-						<input type="text" id="telefone" name="telefone" value="<?php echo $row['telefone']; ?>"/>
-						<label id="tel">Telefone: </label>
+						<input type="text" name="telefone" value="<?php echo $row['telefone']; ?>"/>
+						<label for="telefone">Telefone: </label>
 					</div>
 					
 					<div class="row col s4 left-align btnform">
@@ -63,9 +53,4 @@ $dataNascimento = date("d/m/Y", strtotime($row['dataNascimento']));
                 </form>
 			</div>
         </div>
-		<!-- Materialize JS -->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<!-- Materialize JS -->
-		<script src="../js/materialize.js"></script>
-    </body>
-</html>
+		<?php require_once 'includes/rodapecss.php'; ?>

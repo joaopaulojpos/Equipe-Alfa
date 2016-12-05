@@ -22,7 +22,7 @@
 								<tr>
 									<th><b>Codigo</b></th>
 									<th><b>Nome</b></th>
-									<th><b>Telefone</b></th>
+									<th><b>Telefone</b></th>									
 								</tr>
 							</thead>	
                 
@@ -31,7 +31,7 @@
 							<tr>
                                 <td><?php echo $row['codigoProfessor'] ?></td>
 								<td><?php echo $row['nome'] ?></td>
-								<td><?php echo $row['telefone'] ?></td>
+								<td><?php echo $row['telefone'] ?></td>								
 							</tr>
              
                 <?php endwhile; ?>
@@ -45,7 +45,7 @@
 			<?php else: ?>
             <?php //SQL para LISTAR os dados dos alunos
             $sql = "SELECT codigoProfessor, nome, telefone FROM professor";
-            $query = mysqli_query($conn, $sql) or die("Não foi possível listar os dados do professor.\n Erro: " . mysql_error($conn));?>
+            $query = mysqli_query($conn, $sql) or die("Não foi possível listar os dados do professor.\n Erro: " . mysqli_error($conn));?>
 
             <?php if (mysqli_num_rows($query) > 0):?>
                 
@@ -55,7 +55,7 @@
 				<form method="post" action="">				
 					<div class="row input-field col s8 left-align">
 						<input type="text" id="codigoProfessor" name="codigoProfessor"/>					
-						<label for="codigoProfessor"><b>Codigo:</b></label>
+						<label for="codigoProfessor"><b>Código:</b></label>
 					</div>
 					<div>
 						<button type="submit" class="btn-floating btn-small waves-effect waves-teal"><i class="material-icons right-align">search</i></button></td>					
@@ -68,7 +68,7 @@
 					<tbody>							
 						<thead>
 							<tr>
-								<th>Codigo</th>
+								<th>Código</th>
 								<th>Nome</th>
 								<th>Telefone</th>
 								<th>Ações</th>

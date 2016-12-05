@@ -9,16 +9,21 @@
         <form method="POST" action="../model/cadastrar/cadastrarTurma.php">
 
         <div class="row input-field col s6 left-align">
-        <input id="codigoPeriodo" type="number" min="1" max="10" name="codigoPeriodo" class="validate">
-        <label for="codigoPeriodo">Código Período:</label>
+        <input type="number" min="1" max="10" name="codigoCurso" class="validate">
+        <label for="codigoCurso">Código Curso:</label>
         </div>
 
         <div class="row input-field col s6 left-align">
-        <input id="ano" type="number" min="2016" max="2116" name="ano" class="validate">
+        <input type="number" min="1" max="10" name="periodo" class="validate">
+        <label for="perido">Período</label>
+        </div>
+
+        <div class="row input-field col s6 left-align">
+        <input type="number" min="2017" max="2116" name="ano" class="validate">
         <label for="ano">Ano</label>
         </div>
 
-       <div class="row input-field col s12 left-align">
+       <div class="row input-field col s6 left-align">
             <select name="turno">
                 <option value="">Turno:</option>
                 <option value="manha">Manhã</option>

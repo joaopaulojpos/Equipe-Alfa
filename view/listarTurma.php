@@ -8,7 +8,7 @@
         <?php require_once '../model/conexao.php'; ?>                    
                
             <?php //SQL para LISTAR as Turmas
-            $sql = "SELECT codigoTurma, codigoPeriodo, ano, turno FROM turma";
+            $sql = "SELECT codigoTurma, codigoCurso, ano, turno FROM turma";
             $query = mysqli_query($conn, $sql) or die("Não foi possível listar a(s) turma(s). Erro: " . mysqli_error($conn)); ?>
 
             <?php if (mysqli_num_rows($query) > 0):?>
@@ -21,7 +21,7 @@
 						<thead>
 							<tr>
 								<th>Código</th>
-								<th>Código Período</th>
+								<th>Código Curso</th>
 								<th>Ano</th>
 								<th>Turno</th>
 								<th>Ações</th>
@@ -33,7 +33,7 @@
 
 							<tr>
 								<td><?php echo $row['codigoTurma'] ?></td>
-								<td><?php echo $row['codigoPeriodo'] ?></td>								
+								<td><?php echo $row['codigoCurso'] ?></td>								
 								<td><?php echo $row['ano']    ?></td>
 								<td><?php echo $row['turno']    ?></td>
 								<td><a href="../model/excluir/excluirTurma.php?codigoTurma=<?php echo $row['codigoTurma']; ?>"><i class="material-icons">delete</i></a>
