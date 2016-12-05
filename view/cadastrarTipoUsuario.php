@@ -34,7 +34,7 @@
         </div>
 
         <div class="row col s4 rigth-align">
-        <a class="btn waves-effect waves-light" href="inicioAdministrador.php">Voltar</a>
+        <a class="btn waves-effect waves-light" href="cadastrarUsuario.php">Voltar</a>
         </div>
 
         <br>

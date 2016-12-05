@@ -1,12 +1,12 @@
 <?php
 require_once '../model/conexao.php';
 
-$codigoPeriodo = $_GET['codigoPeriodo'];
+$codigoDisciplina = $_GET['codigoDisciplina'];
 
 /*
  * Retornando os dados do banco de dados para o formulário para que possam ser alterados
  */
-$sql = "SELECT codigoPeriodo, numeroPeriodo, tipoEnsino FROM periodo WHERE codigoPeriodo = '$codigoPeriodo'";
+$sql = "SELECT codigoDisciplina, nomeDisciplina FROM disciplina WHERE codigoDisciplina = '$codigoDisciplina'";
 $query = mysqli_query($conn, $sql) or die("Não foi possível concluir a operação! Erro: " . mysqli_error($conn));
 $row = mysqli_fetch_assoc($query);
 
@@ -17,24 +17,18 @@ require_once 'includes/cabecalhocss.php';
 
 <div class="valign-wrapper container row formulario">
     <div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
-        <h2><b>Alterar Período</b></h2>
+        <h2><b>Alterar Disciplina</b></h2>
 
-        <form method="POST" action="../model/alterar/alterarPeriodo.php">
-
-        <div class="row input-field col s6 left-align">
-        <input id="codigoPeriodo" type="text" name="codigoPeriodo" class="validate" value="<?php echo $row['codigoPeriodo']; ?>">
-        <label for="codigoPeriodo">Codigo:</label>
-        </div>
+        <form method="post" action="../model/alterar/alterarDisciplina.php">
 
         <div class="row input-field col s6 left-align">
-        <input id="numeroPeriodo" type="text" name="numeroPeriodo" class="validate" value="<?php echo $row['numeroPeriodo']; ?>">
-        <label for="numeroPeriodo">Período:</label>
+            <input type="hidden" name="codigoDisciplina" value="<?php echo $row['codigoDisciplina']; ?>">
         </div>
 
         <div class="row input-field col s12 left-align">
-            <input type="text" id="tipoEnsino" name="tipoEnsino" value="<?php echo $row['tipoEnsino'] ?>">
-            <label for="tipoEnsino">Descrição:</label>
-        </div>
+            <input type="text" name="nomeDisciplina" class="validate" value="<?php echo $row['nomeDisciplina']; ?>">
+            <label for="nomeDisciplina">Nome Disciplina:</label>
+        </div>        
 
         <div class="row col s4 left-align btnform">
         <button class="btn waves-effect waves-ligth" type="submit" name="alterar">
@@ -43,9 +37,8 @@ require_once 'includes/cabecalhocss.php';
         </div>
 
         <div class="row col s4 left-align">
-        <a class="btn waves-effect waves-light" href="listarPeriodo.php">Voltar</a>
+        <a class="btn waves-effect waves-light" href="listarDisciplina.php">Voltar</a>
         </div>
-
         <br>
         </form>
     </div>

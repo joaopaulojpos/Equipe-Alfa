@@ -7,7 +7,7 @@ $codigoTurma = $_GET['codigoTurma'];
  * Retornando os dados do banco de dados para o formulário para que possam ser alterados
  */
 $sql = "SELECT codigoTurma, codigoPeriodo, ano, turno FROM turma WHERE codigoTurma = '$codigoTurma'";
-$query = mysqli_query($conn, $sql) or die("Não foi concluir a operação! Erro: " . mysqli_error($conn));
+$query = mysqli_query($conn, $sql) or die("Não foi possível concluir a operação! Erro: " . mysqli_error($conn));
 $row = mysqli_fetch_assoc($query);
 
 require_once 'includes/cabecalhocss.php';
