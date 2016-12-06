@@ -6,8 +6,8 @@
 				<form method="post" action="../model/cadastrar/cadastrarNotaNumero.php">
 					
 					<div class="row input-field col s12 left-align"/>
-						<input type="number" name="matriculaAluno"/>
-						<label for="matriculaAluno">Matricula:</label>
+						<input type="number" name="codigoNota"/>
+						<label for="codigoNota">Código Nota:</label>
 					</div>
 
 					<div class="row input-field col s12 left-align"/>

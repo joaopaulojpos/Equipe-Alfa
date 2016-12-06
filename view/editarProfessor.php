@@ -1,6 +1,7 @@
 <?php
 require_once '../model/conexao.php';
 
+
 $codigoProfessor = $_GET['codigoProfessor'];
 
 /*
@@ -21,21 +22,23 @@ require_once 'includes/cabecalhocss.php';
 
         <form method="POST" action="../model/alterar/alterarProfessor.php">
 
-        <div class="row input-field col s6 left-align">
-        <input id="codigoProfessor" type="number" min="1" name="codigoProfessor" class="validate" value="<?php echo $row['codigoProfessor']; ?>">
-        <label for="codigoProfessor">Codigo</label>
-        </div>
+       
+        <input type="hidden" name="codigoProfessor" class="validate" value="<?php echo $row['codigoProfessor']; ?>">   
 
-       <div class="row input-field col s6 left-align">
-            <input type="tel" id="telefone" name="telefone" value="<?php echo $row['telefone'] ?>">
+         <div class="row input-field col s12 left-align">
+            <input type="text" name="nome" value="<?php echo $row['nome'] ?>">
+            <label for="nome">Nome do Professor</label>
+        </div>     
+
+        <div class="row input-field col s6 left-align">
+            <input type="tel" name="telefone" value="<?php echo $row['telefone'] ?>">
             <label for="telefone">Telefone</label>
         </div>
 
-        <div class="row input-field col s12 left-align">
-            <input type="text" id="nomeProfessor" name="nomeProfessor" value="<?php echo $row['nome'] ?>">
-            <label for="nomeProfessor">Nome do Professor</label>
+         <div class="row input-field col s6 left-align">
+            <input type="number" name="codigoDisciplina" value="<?php echo $row['codigoDisciplina'] ?>">
+            <label for="codigoDisciplina">Código Disciplina</label>
         </div>
-
 
         <div class="row col s4 left-align btnform">
         <button class="btn waves-effect waves-ligth" type="submit" name="alterar">
@@ -51,5 +54,4 @@ require_once 'includes/cabecalhocss.php';
         </form>
     </div>
 </div>
-
 <?php require_once 'includes/rodapecss.php'; ?>

@@ -19,28 +19,28 @@ if (isset($_POST['matriculaAluno'])) {
      */
     if ($matriculaAluno == "" || $matriculaAluno == null) {
         echo "<script type='text/javascript'>alert('O campo matrícula deve ser preenchido');location.href='../../view/cadastrarAluno.php';</script>";
-    } else {
+    } else 
         if (strlen($matriculaAluno) > 10 || strlen($matriculaAluno) < 10) {
             echo "<script type='text/javascript'>alert('O campo matricula deve conter 10 digitos');location.href='../../view/cadastrarAluno.php';</script>";
-        } else {
+        } else 
             if (!is_numeric($matriculaAluno)) {
                 echo "<script type='text/javascript'>alert('O campo matrícula deve conter apenas números');location.href='../../view/cadastrarAluno.php';</script>";
-            } else {
+            } else 
                 if ($dataNascimento == "" || $dataNascimento == null) {
                     echo "<script type='text/javascript'>alert('O campo data de nascimento deve ser preenchido');location.href='../../view/cadastrarAluno.php';</script>";
-                } else {
+                } else 
                     if ($nomeAluno == "" || $nomeAluno == null) {
                         echo "<script type='text/javascript'>alert('O campo nome deve ser preenchido');location.href='../../view/cadastrarAluno.php';</script>";
-                    } else {
+                    } else 
                         if ($sexoAluno == "" || $sexoAluno == null) {
                             echo "<script type='text/javascript'>alert('Selecione uma opção para o campo sexo');location.href='../../view/cadastrarAluno.php';</script>";
-                        } else {
+                        } else 
                             if ($telefone == "" || $telefone == null) {
                                 echo "<script type='text/javascript'>alert('O campo telefone deve ser preenchido');location.href='../../view/cadastrarAluno.php';</script>";
-                            } else {
+                            } else 
                                 if (!preg_match('^[0-9]{2} [0-9]{4,5}-[0-9]{4}$^', $telefone)) {
                                     echo "<script type='text/javascript'>alert('Telefone inválido!');location.href='../../view/cadastrarAluno.php';</script>";
-                                } else {
+                                } else 
                                     if ($matricula == $matriculaAluno) {
                                         echo "<script type='text/javascript'>alert('Esta matrícula já encontra-se cadastrada');location.href='../model/listar/listarAluno.php'</script>";
                                     } else {
@@ -53,14 +53,7 @@ if (isset($_POST['matriculaAluno'])) {
                                         } else {
                                             echo "<script type='text/javascript'>alert('Não foi possível cadastrar este aluno');location.href='../../view/cadastrarAluno.php';</script>";
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+                                    }                              
+            
     mysqli_close($conn);
 }

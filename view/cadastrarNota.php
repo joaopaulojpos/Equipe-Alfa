@@ -7,18 +7,23 @@
 			<h2>Cadastrar Nota</h2>
 			<form method="post" action="../model/cadastrar/cadastrarNota.php">				
 
-				<div class="row input-field col s12 left-align">
-					<input type="text" id="matriculaAluno" name="matriculaAluno" class="validate" />
+				<div class="row input-field col s6 left-align">
+					<input type="text" name="matriculaAluno" class="validate" />
 					<label>Matrícula Aluno: </label>
 				</div>
 
 				<div class="row input-field col s6 left-align">
-					<input type="text" id="recuperacao" name="recuperacao"/>
+					<input type="text" name="codigoDisciplina" class="validate" />
+					<label>Código Disciplina: </label>
+				</div>
+
+				<div class="row input-field col s6 left-align">
+					<input type="text" name="recuperacao"/>
 					<label>Nota Recuperação: </label>
 				</div>
 
 				<div class="row input-field col s6 left-align">
-					<input type="text" id="final" name="final"/>
+					<input type="text" name="final"/>
 					<label>Nota Final: </label>
 				</div>
 

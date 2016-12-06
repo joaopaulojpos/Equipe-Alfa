@@ -12,32 +12,21 @@ $row = mysqli_fetch_assoc($query);
 $dataNascimento = date("d/m/Y", strtotime($row['dataNascimento']));
 }
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-        <title>Sistema de Gerenciamento Acadêmico</title>
-        <!--Import Google Icon Font-->
-		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<!-- Materialize CSS -->
-		<link rel="stylesheet" href="../csss/materialize.css">
-		<link rel="stylesheet" href="../csss/custom.css">
-    </head>
+<?php require_once 'includes/cabecalhocss.php'; ?>
     <body class="#37474f blue-grey darken-3">
         <div class="valign-wrapper container row formulario">
 			<div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
 				<h2><b>Alterar Aluno</b></h2>                
                 <form method="post" action="../model/alterar/alterarAluno.php">
 				
-					<div class="row input-field col s12 left-align">
+					<div class="row input-field col s6 left-align">
 						<input type="text" id="nomeAluno" name="nomeAluno" value="<?php echo $row['nomeAluno']; ?>" />
 						<label class="label">Nome: </label>
 					</div>
-					<div class="row input-field col s6 left-align">
-						<input type="text" id="matriculaAluno" name="matriculaAluno" value="<?php echo $row['matriculaAluno']; ?>"/>
-						<label class="label">Matrícula: </label>
-					</div>
+					
+						<input type="hidden" id="matriculaAluno" name="matriculaAluno" value="<?php echo $row['matriculaAluno']; ?>"/>
+					
+
 					<div class="row input-field col s6 left-align">
 						<input type="text" id="dataNascimento" name="dataNascimento" value="<?php echo $dataNascimento ?>"/>					
 						<label id="dtNasc">Data Nasc.: </label>
@@ -69,3 +58,4 @@ $dataNascimento = date("d/m/Y", strtotime($row['dataNascimento']));
 		<script src="../js/materialize.js"></script>
     </body>
 </html>
+<?php require_once 'includes/rodapecss.php'; ?>

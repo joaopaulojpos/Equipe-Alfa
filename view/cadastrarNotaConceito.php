@@ -6,8 +6,8 @@
 			<h2>Nota Conceito</h2>		
 			<form method="post" action="../model/cadastrar/cadastrarNotaConceito.php">
 				<div class="row input-field col s12 left-align"/>
-					<input type="text" id="matriculaAluno" id="matriculaAluno" name="matriculaAluno">
-					<label for="matriculaAluno">Matrícula Aluno:</label>
+					<input type="text" name="matriculaAluno">
+					<label for="matriculaAluno">Matrícula:</label>
 				</div>
 				<div class="row input-field col s6 left-align"/>
 					<select name="conceito1">

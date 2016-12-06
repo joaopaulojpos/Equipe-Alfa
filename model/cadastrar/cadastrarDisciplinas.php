@@ -21,12 +21,23 @@ if (isset($_POST['cadastrar'])) {
                 //Se tudo estiver OK, insere o registro no banco de dados
                 $insert = "INSERT INTO disciplina(nomeDisciplina) VALUES('$nomeDisciplina')";
                 $result = mysqli_query($conn, $insert) or die("Falha no cadastro da Disciplina. " . mysqli_error($conn));
+                $codigoDisciplina = mysqli_insert_id($conn);
+            }
 
-                if ($result) {
-                    echo "<script type='text/javascript'>alert('Cadastro concluído com sucesso!');location.href='../../view/listarDisciplina.php';</script>";
+                if ($result) {                    
+
+                $insert1 = "INSERT INTO disciplinaTurma(codigoDisciplina) VALUES('$codigoDisciplina')";
+                $result1 = mysqli_query($conn,$insert1)or die("Erro: " . mysqli_error($conn));
+
+                $insert2 = "INSERT INTO professorDisciplina(codigoDisciplina) VALUES($codigoDisciplina)";
+                $result2 = mysqli_query($conn,$insert2) or die("Erro: " . mysqli_error($conn));
+
+                echo "<script type='text/javascript'>alert('Cadastro concluído com sucesso!');location.href='../../view/listarDisciplina.php';</script>";
+
+                
                 } else {
                     echo "<script type='text/javascript'>alert('Não foi possível concluir o cadastro');location.href='../../view/cadastrarDisciplinas.php'</script>";
                 }
-            }
+            
             mysqli_close($conn);
-        } 
+        }

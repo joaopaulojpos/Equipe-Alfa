@@ -58,7 +58,7 @@
 				<div>
 				<form method="post" action="">				
 					<div class="row input-field col s8 left-align">
-						<input type="text" id="matriculaAluno" name="matriculaAluno"/>					
+						<input type="text" name="matriculaAluno"/>					
 						<label for="matriculaAluno"><b>Matrícula:</b></label>
 					</div>
 					<div>

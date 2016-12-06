@@ -11,7 +11,7 @@
 
 		  <?php $codigoProfessor = $_POST['codigoProfessor'];				          
                 //SQL para PESQUISAR professor escolhido por CODIGO ou por NOME
-                $sql = "SELECT codigoProfessor, nome, telefone FROM professor WHERE codigoProfessor = '$codigoProfessor'";
+                $sql = "SELECT codigoProfessor, nome, telefone, codigoDisciplina FROM professor WHERE codigoProfessor = '$codigoProfessor'";
                 $query = mysqli_query($conn, $sql) or die("Falha ao buscar o professor. Erro: " . mysqli_error($conn))?>
 				
 				<h2><b>Resultado da Pesquisa</b></h2>
@@ -23,6 +23,9 @@
 									<th><b>Codigo</b></th>
 									<th><b>Nome</b></th>
 									<th><b>Telefone</b></th>
+									<th><b>Código Disciplina</b></th>
+									<th><b>Ações</b></th>
+
 								</tr>
 							</thead>	
                 
@@ -32,6 +35,9 @@
                                 <td><?php echo $row['codigoProfessor'] ?></td>
 								<td><?php echo $row['nome'] ?></td>
 								<td><?php echo $row['telefone'] ?></td>
+								<td><?php echo $row['codigoDisciplina'] ?></td>
+								<td><a href="../model/excluir/excluirProfessor.php?codigoProfessor=<?php echo $row['codigoProfessor']; ?>"><i class="material-icons">delete</i></a>
+								<a href="../view/editarProfessor.php?codigoProfessor=<?php echo $row['codigoProfessor']; ?>"><i class="material-icons">edit</i></a></td>
 							</tr>
              
                 <?php endwhile; ?>
@@ -44,7 +50,7 @@
                 </div>     
 			<?php else: ?>
             <?php //SQL para LISTAR os dados dos alunos
-            $sql = "SELECT codigoProfessor, nome, telefone FROM professor";
+            $sql = "SELECT codigoProfessor, nome, telefone, codigoDisciplina FROM professor";
             $query = mysqli_query($conn, $sql) or die("Não foi possível listar os dados do professor.\n Erro: " . mysql_error($conn));?>
 
             <?php if (mysqli_num_rows($query) > 0):?>
@@ -68,9 +74,10 @@
 					<tbody>							
 						<thead>
 							<tr>
-								<th>Codigo</th>
+								<th>Código</th>
 								<th>Nome</th>
 								<th>Telefone</th>
+								<th>Código Disciplina</th>
 								<th>Ações</th>
 							</tr>							
 						</thead>
@@ -81,6 +88,7 @@
 								<td><?php echo $row['codigoProfessor'] ?></td>
 								<td><?php echo $row['nome'] ?></td>
 								<td><?php echo $row['telefone'] ?></td>
+								<td><?php echo $row['codigoDisciplina'] ?></td>
 								<td><a href="../model/excluir/excluirProfessor.php?codigoProfessor=<?php echo $row['codigoProfessor']; ?>"><i class="material-icons">delete</i></a>
 								<a href="../view/editarProfessor.php?codigoProfessor=<?php echo $row['codigoProfessor']; ?>"><i class="material-icons">edit</i></a></td>
 							</tr>                        

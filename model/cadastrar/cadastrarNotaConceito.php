@@ -33,7 +33,7 @@
 			}else
 				if($matriculaAluno != $matricula){
 
-				echo "<script type='text/javascript'>alert('O Nota do aluno de matrícula $matriculaAluno não encontra - se cadastrado!');location.href='../../view/cadastrarNota.php';</script>";
+				echo "<script type='text/javascript'>alert('Matrícula não cadastrada!');location.href='../../view/cadastrarNota.php';</script>";
 
 				}else{
 
@@ -59,7 +59,7 @@
 								
 								if($con2 != null){								
 
-									echo "<script type='text/javascript'>alert('O 2º conceito do aluno já foi inserido!');location.href='../../view/listarNotaConceito.php';</script>";
+									echo "<script type='text/javascript'>alert('O 2º conceito do aluno já foi inserido!');location.href='../../view/cadastrarNotaConceito.php';</script>";
 								}else{
 
 									$sql3 = "UPDATE notaConceito SET conceito2 = '$conceito2' WHERE matriculaAluno = '$matriculaAluno'";
