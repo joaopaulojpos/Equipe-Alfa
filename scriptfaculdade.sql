@@ -1,14 +1,30 @@
+/*==============================================================*/
+/* DBMS name:      MySQL 5.0                                    */
+/* Created on:     21/10/2016 12:45:29                          */
+/*==============================================================*/
+
 
 /*==============================================================*/
-/* Table: GRADE                                                 */
+/* Table: ALUNO                                                 */
 /*==============================================================*/
-create table GRADE
+create table ALUNO
 (
-   CODIGOGRADE           int,
-   CODIGOCURSO           int not null,  
-   CODIGOPERIODO         int not null,
-   CODIGODISCIPLINA      int,
-   primary key (CODIGOGRADE)
+   MATRICULAALUNO       int not null,
+   DATANASCIMENTO       date,
+   NOMEALUNO            varchar(50),
+   SEXOALUNO            char(1),
+   TELEFONE             varchar(15),
+   primary key (MATRICULAALUNO)
+);
+
+/*==============================================================*/
+/* Table: DISCIPLINA                                            */
+/*==============================================================*/
+create table DISCIPLINA
+(
+   CODIGODISCIPLINA     int auto_increment,
+   NOMEDISCIPLINA       varchar(50),
+   primary key (CODIGODISCIPLINA)
 );
 
 /*==============================================================*/
@@ -17,10 +33,10 @@ create table GRADE
 create table DISCIPLINATURMA
 (
    CODIGODISCIPLINATURMA int auto_increment,
-   CODIGODISCIPLINA      int,
-   CODIGOPROFESSOR       int,
-   CODIGOTURMA           int,
-   CODIGONOTA            int,
+   CODIGODISCIPLINA      int not null,
+   CODIGOPROFESSOR       int not null,
+   CODIGOTURMA           int not null,
+   CODIGONOTA            int not null,
    primary key (CODIGODISCIPLINATURMA)
 );
 
@@ -29,21 +45,12 @@ create table DISCIPLINATURMA
 /*==============================================================*/
 create table FALTA
 (
-   MATRICULAALUNO        int,
-   CODIGODISCIPLINATURMA int,
-   MÊS					 varchar(15),
-   QTDFALTAS			 int,
+   MATRICULAALUNO        int not null,
+   CODIGODISCIPLINATURMA int not null,
+   MES                   varchar(15),
+   FALTA                 int,
    ABONO                 varchar(5),
-   MOTIVO                varchar(50)
-);
-
-/*==============================================================*/
-/* Table: PRESENCA                                              */
-/*==============================================================*/
-create table PRESENCA
-(
-   MATRICULAALUNO        int unsigned,
-   CODIGODISCIPLINATURMA int unsigned,   
+   MOTIVO                varchar(50)   
 );
 
 /*==============================================================*/
@@ -53,10 +60,10 @@ create table NOTA
 (
    CODIGONOTA           int auto_increment,
    MATRICULAALUNO       int not null,
-   RECUPERACAO			varchar(10) default = null,
-   FINAL				varchar(10) default = null,
-   TIPONOTA             varchar(10),
-   SITUACAO				varchar(15),  
+   RECUPERACAO          varchar(10),
+   FINAL                varchar(10),
+   TIPONOTA             VARCHAR(10),
+   SITUACAO             VARCHAR(15),
    primary key (CODIGONOTA)
 );
 
@@ -66,29 +73,30 @@ create table NOTA
 create table NOTACONCEITO
 (
    CODIGONOTA           int not null,
-   CONCEITO1            varchar(10) default = null,
-   CONCEITO2			varchar(10) default = null
+   MATRICULAALUNO       int not null,
+   CONCEITO1            varchar(10),
+   CONCEITO2            varchar(10)
 );
 
 /*==============================================================*/
 /* Table: NOTANUMERO                                            */
 /*==============================================================*/
+
 create table NOTANUMERO
 (
    CODIGONOTA           int not null,
-   NOTA1        	  	varchar(10) default = null,
-   NOTA2				varchar(10)	default = null
+   MATRICULAALUNO       int not null,
+   NOTA1                varchar(10),
+   NOTA2                varchar(10)
 );
 
 /*==============================================================*/
-/* Table: PERIODO                                               */
+/* Table: PRESENCA                                              */
 /*==============================================================*/
-create table PERIODO
+create table FREQUENCIA
 (
-   CODIGOPERIODO        int auto_increment,
-   CODIGOCURSO          int not null,
-   NUMEROPERIODO        int,
-   primary key (CODIGOPERIODO)
+   MATRICULAALUNO        int,
+   CODIGODISCIPLINATURMA int  
 );
 
 /*==============================================================*/
@@ -96,7 +104,7 @@ create table PERIODO
 /*==============================================================*/
 create table PROFESSOR
 (
-   CODIGOPROFESSOR      int auto_increment,
+   CODIGOPROFESSOR      int not null,
    NOME                 varchar(50),
    TELEFONE             varchar(15),
    primary key (CODIGOPROFESSOR)
@@ -107,9 +115,19 @@ create table PROFESSOR
 /*==============================================================*/
 create table PROFESSORDISCIPLINA
 (
-   CODIGOPROFESSORDISCIPLINA int auto_increment,
-   CODIGOPROFESSOR      	 int,
-   CODIGODISCIPLINA          int
+   CODIGOPROFESSOR      int,
+   CODIGODISCIPLINA     int
+);
+
+/*==============================================================*/
+/* Table: PERIODO                                               */
+/*==============================================================*/
+create table PERIODO
+(
+   CODIGOPERIODO        int auto_increment,
+   NUMEROPERIODO        int,
+   TIPOENSINO           varchar(10),
+   primary key (CODIGOPERIODO)
 );
 
 /*==============================================================*/
@@ -128,9 +146,9 @@ create table TIPOUSUARIO
 create table TURMA
 (
    CODIGOTURMA          int auto_increment,
-   CODIGOPERIODO        int,
-   ANO                  int,
-   TURNO                varchar(5),   
+   CODIGOPERIODO        int not null,
+   ANO                  varchar(4),
+   TURNO                varchar(5),  
    primary key (CODIGOTURMA)
 );
 
@@ -140,10 +158,10 @@ create table TURMA
 create table USUARIO
 (
    CODIGOUSUARIO        int auto_increment,
-   CODIGOTIPOUSUARIO    int,
-   USUARIOLOGIN         varchar(50),
-   SENHA                int,
-   CONFIRMARSENHA       int,   
+   CODIGOTIPOUSUARIO    int not null,
+   USUARIOLOGIN         varchar(50) not null,
+   SENHA                int not null,
+   CONFIRMARSENHA       int not null,   
    primary key (CODIGOUSUARIO)
 );
 
@@ -174,14 +192,11 @@ alter table NOTACONCEITO add constraint FK_NOTACONCEITO_NOTA foreign key (CODIGO
 alter table NOTANUMERO add constraint FK_NOTANUMERO_NOTA foreign key (CODIGONOTA)
       references NOTA (CODIGONOTA) on delete CASCADE on update CASCADE;
 
-alter table PRESENCA add constraint FK_PRESENCA_ALUNO foreign key (MATRICULAALUNO)
+alter table FREQUENCIA add constraint FK_FREQUENCIA_ALUNO foreign key (MATRICULAALUNO)
       references ALUNO (MATRICULAALUNO) on delete CASCADE on update CASCADE;
 
-alter table PRESENCA add constraint FK_PRESENCA_DISCIPLINATURMA foreign key (CODIGODISCIPLINATURMA)
+alter table FREQUENCIA add constraint FK_FREQUENCIA_DISCIPLINATURMA foreign key (CODIGODISCIPLINATURMA)
       references DISCIPLINATURMA (CODIGODISCIPLINATURMA) on delete CASCADE on update CASCADE;
-	  
-alter table PERIODO ADD constraint FK_PRESENCA_CURSO foreign key (CODIGOCURSO)
-	  references CURSO (CODIGOCURSO) on delete CASCADE on update CASCADE; 
 
 alter table PROFESSORDISCIPLINA add constraint FK_PROFESSORDISCIPLINA_DISCIPLINA foreign key (CODIGODISCIPLINA)
       references DISCIPLINA (CODIGODISCIPLINA) on delete CASCADE on update CASCADE;
@@ -193,13 +208,4 @@ alter table TURMA add constraint FK_TURMA_PERIODO foreign key (CODIGOPERIODO)
       references PERIODO (CODIGOPERIODO) on delete CASCADE on update CASCADE;
       
 alter table USUARIO add constraint FK_USUARIO_TIPOUSUARIO foreign key (CODIGOTIPOUSUARIO)
-	  references TIPOUSUARIO (CODIGOTIPOUSUARIO) on delete CASCADE on update CASCADE;
-
-alter table GRADE add constraint FK_GRADE_CURSO foreign key (CODIGOCURSO)
-	  references CURSO (CODIGOCURSO) on delete CASCADE on update CASCADE;
-	 
-alter table GRADE add constraint FK_GRADE_PERIODO foreign key (CODIGOPERIODO)
-	  references PERIODO (CODIGOPERIODO) on delete CASCADE on update CASCADE;
-	  
-alter table GRADE add constraint FK_GRADE_DISCIPLINA foreign key (CODIGODISCIPLINA)
-	  references DISCIPLINA (CODIGODISCIPLINA) on delete CASCADE on update CASCADE;
+     references TIPOUSUARIO (CODIGOTIPOUSUARIO) on delete CASCADE on update CASCADE;
