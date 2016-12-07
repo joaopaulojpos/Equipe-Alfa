@@ -7,7 +7,7 @@
         <?php require_once '../model/conexao.php'; ?>                    
                
             <?php //SQL para LISTAR as Faltas
-            $sql = "SELECT codigoFalta, matriculaAluno, codigoTurma, nomeDisciplina, mes, falta, abono, motivo FROM falta";
+            $sql = "SELECT codigoFalta, matriculaAluno, codigoDisciplinaTurma, mes, qtdFalta FROM falta";
             $query = mysqli_query($conn, $sql) or die("Não foi possível listar a(s) faltas(s). Erro: " . mysqli_error($conn));?>
 
             <?php if (mysqli_num_rows($query) > 0):?>
@@ -18,30 +18,22 @@
 				<table class="highlight">				
 					<tbody>							
 						<thead>
-							<tr>
-								<th>Código</th>
-								<th>Matrícula</th>
-								<th>Turma</th>
-								<th>Disciplina</th>
+							<tr>							
+								<th>Matrícula</th>								
+								<th>Código Disciplina</th>
 								<th>Mês</th>
-								<th>Falta</th>
-								<th>Abono</th>
-								<th>Motivo</th>
+								<th>Qtd</th>								
 								<th>Ações</th>
 							</tr>							
 						</thead>
 
                 <?php while ($row = mysqli_fetch_assoc($query)): ?>
 
-							<tr>
-								<td><?php echo $row['codigoFalta'] ?>
-								<td><?php echo $row['matriculaAluno'] ?></td>
-								<td><?php echo $row['codigoTurma'] ?></td>
-								<td><?php echo $row['nomeDisciplina'] ?></td>
+							<tr>							    
+								<td><?php echo $row['matriculaAluno'] ?></td>								
+								<td><?php echo $row['codigoDisciplinaTurma'] ?></td>
 								<td><?php echo $row['mes'] ?></td>
-								<td><?php echo $row['falta'] ?></td>
-								<td><?php echo $row['abono'] ?></td>
-								<td><?php echo $row['motivo'] ?></td>
+								<td><?php echo $row['qtdFalta'] ?></td>								
 								<td><a href="../model/excluir/excluirFalta.php?codigoFalta=<?php echo $row['codigoFalta']; ?>"><i class="material-icons">delete</i></a>
 								<a href="../view/editarFalta.php?codigoFalta=<?php echo $row['codigoFalta']; ?>"><i class="material-icons">edit</i></a></td>
 							</tr>                        

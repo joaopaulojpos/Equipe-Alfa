@@ -1,12 +1,12 @@
 <?php
 require_once '../model/conexao.php';
 
-$codigoNota = $_GET['codigoNota'];
+$matriculaAluno = $_GET['matriculaAluno'];
 
 /*
  * Retornando os dados do banco de dados para o formulário para que possam ser alterados
  */
-$sql = "SELECT codigoNota,conceito1, conceito2 FROM notaConceito WHERE codigoNota = '$codigoNota'";
+$sql = "SELECT matriculaAluno,conceito1, conceito2 FROM notaConceito WHERE matriculaAluno = '$matriculaAluno'";
 $query = mysqli_query($conn, $sql) or die("Não foi possível concluir a operação! Erro: " . mysqli_error($conn));
 $row = mysqli_fetch_assoc($query);
 
@@ -22,7 +22,7 @@ require_once 'includes/cabecalhocss.php';
         <form method="post" action="../model/alterar/alterarNotaConceito.php"> 
 
         <div>
-            <input type="hidden" name="codigoNota" value="<?php echo $row['codigoNota']; ?>">
+            <input type="hidden" name="matriculaAluno" value="<?php echo $row['matriculaAluno']; ?>">
         </div>       
 
         <div class="row input-field col s6 left-align">

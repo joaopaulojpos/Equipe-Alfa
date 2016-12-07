@@ -6,8 +6,8 @@ $codigoFalta = $_GET['codigoFalta'];
 /*
  * Retornando os dados do banco de dados para o formulário para que possam ser alterados
  */
-$sql = "SELECT codigoFalta, matriculaAluno, codigoTurma, nomeDisciplina, mes, falta, abono, motivo FROM falta WHERE codigoFalta = '$codigoFalta'";
-$query = mysqli_query($conn, $sql) or die("Não foi possível concluir a operação! Erro: " . mysqli_error($conn));
+$sql = "SELECT codigoFalta, matriculaAluno, codigoDisciplinaTurma, mes, qtdFalta FROM falta WHERE codigoFalta = '$codigoFalta'";
+$query = mysqli_query($conn, $sql) or die("Não foi possível concluir a operação. Erro: " . mysqli_error($conn));
 $row = mysqli_fetch_assoc($query);
 
 require_once 'includes/cabecalhocss.php';
@@ -21,30 +21,18 @@ require_once 'includes/cabecalhocss.php';
 
         <form method="post" action="../model/alterar/alterarFalta.php">
 
-         <div>
-            <input type="hidden" name="codigoFalta" class="validate" value="<?php echo $row['codigoFalta']; ?>">
-        </div>
+         
+        <input type="hidden" name="codigoFalta" class="validate" value="<?php echo $row['codigoFalta']; ?>">
 
         <div class="row input-field col s6 left-align">
             <input type="number" name="matriculaAluno" class="validate" value="<?php echo $row['matriculaAluno']; ?>">
-            <label for="falta">Matrícula:</label>
-        </div>
-
-            <div class="row input-field col s6 left-align">
-            <input type="number" name="falta" class="validate" value="<?php echo $row['falta']; ?>">
-            <label for="falta">Faltas:</label>
-        </div>
-       
+            <label for="matriculaAluno">Matrícula:</label>
+        </div>             
 
         <div class="row input-field col s6 left-align">
-            <input type="number" name="codigoTurma" class="validate" value="<?php echo $row['codigoTurma']; ?>">
-            <label for="codigoTurma">Código Turma:</label>
-        </div>        
-
-        <div class="row input-field col s6 left-align">
-            <input type="text" name="nomeDisciplina" class="validate" value="<?php echo $row['nomeDisciplina']; ?>">
-            <label for="nomeDisciplina">Disciplina:</label>
-        </div>
+            <input type="number" name="codigoDisciplinaTurma" class="validate" value="<?php echo $row['codigoDisciplinaTurma']; ?>">
+            <label for="codigoDisciplinaTurma">Código Turma:</label>
+        </div>           
 
         <div class="row input-field col s6 left-align">
             <input type="text" name="mes" value="<?php echo $row['mes'] ?>">
@@ -52,14 +40,10 @@ require_once 'includes/cabecalhocss.php';
         </div>
 
         <div class="row input-field col s6 left-align">
-            <input type="text" name="abono" value="<?php echo $row['abono'] ?>">
-            <label for="abono">Abono:</label>
-        </div>
+            <input type="text" name="qtdFalta" value="<?php echo $row['qtdFalta'] ?>">
+            <label for="qtdFalta">Qtd:</label>
+        </div>       
 
-        <div class="row input-field col s12 left-align">
-            <input type="text" name="motivo" value="<?php echo $row['motivo'] ?>">
-            <label for="motivo">Motivo:</label>
-        </div>
 
         <div class="row col s4 left-align btnform">
         <button class="btn waves-effect waves-ligth" type="submit" name="alterar">
@@ -72,7 +56,7 @@ require_once 'includes/cabecalhocss.php';
         </div>
         <br>
         </form>
+
     </div>
 </div>
-
 <?php require_once 'includes/rodapecss.php'; ?>

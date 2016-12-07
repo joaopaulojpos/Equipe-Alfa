@@ -29,7 +29,7 @@
         	  $sql = "SELECT matriculaAluno FROM aluno WHERE matriculaAluno = '$matriculaAluno'";
               $query = mysqli_query($conn,$sql) or die("Erro: " . mysqli_error($conn));
               $row = mysqli_fetch_assoc($query);
-              $matricula = $row['matriculaAluno'];		 
+              $matricula = $row['matriculaAluno'];	
 
 		 	if($matriculaAluno == ""){
 
@@ -41,8 +41,8 @@
 		 			echo "<script type='text/javascript'>alert('A matrícula informada não está cadastrada.');location.href='verificarNota.php'</script>";
 		 		}else{
 
-                 $sql = "SELECT aluno.matriculaAluno, aluno.nomeAluno nomeAluno, nota.tipoNota, notaNumero.nota1 nota1, notaNumero.nota2 nota2, nota.recuperacao, nota.final, nota.situacao situacao FROM aluno INNER JOIN nota on aluno.matriculaAluno = nota.matriculaAluno INNER JOIN notaNumero on nota.codigoNota = notaNumero.codigoNota WHERE aluno.matriculaAluno = $matriculaAluno";
-            	 $query = mysqli_query($conn,$sql) or die("Não foi possível listar os dados. Erro: " . mysqli_error($conn));
+                 $sql1 = "SELECT aluno.matriculaAluno, aluno.nomeAluno nomeAluno, nota.tipoNota, notaNumero.nota1 nota1, notaNumero.nota2 nota2, nota.recuperacao, nota.final, nota.situacao situacao FROM aluno INNER JOIN nota on aluno.matriculaAluno = nota.matriculaAluno INNER JOIN notaNumero on nota.matriculaAluno = notaNumero.matriculaAluno WHERE aluno.matriculaAluno = $matriculaAluno";
+            	 $query1 = mysqli_query($conn,$sql1) or die("Não foi possível listar os dados. Erro: " . mysqli_error($conn));
             ?>
 
 					<div>

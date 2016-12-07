@@ -7,7 +7,7 @@
 		<div class="col s12 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">		
 
 		<div>
-			<h2>Situação Aluno</h2>
+			<h2>Relatório de Frequência</h2>
 			<br/>
 			<form method="post" action="">				
 				<div class="row input-field col s8 left-align">
@@ -41,7 +41,7 @@
 		 			echo "<script type='text/javascript'>alert('A matrícula informada não está cadastrada.');location.href='verificarNota.php'</script>";
 		 		}else{
 
-                 $sql = "SELECT aluno.matriculaAluno, aluno.nomeAluno nomeAluno, nota.tipoNota, notaConceito.conceito1 conceito1, notaConceito.conceito2 conceito2, nota.recuperacao, nota.final, nota.situacao situacao FROM aluno INNER JOIN nota on aluno.matriculaAluno = nota.matriculaAluno INNER JOIN notaConceito on nota.matriculaAluno = notaConceito.matriculaAluno WHERE aluno.matriculaAluno = $matriculaAluno";
+                 $sql = "SELECT aluno.matriculaAluno matricula, aluno.nomeAluno nomeAluno, falta.mes mes, falta.qtdFalta qtd  FROM aluno INNER JOIN falta on aluno.matriculaAluno = falta.matriculaAluno  WHERE aluno.matriculaAluno = $matriculaAluno";
             	 $query = mysqli_query($conn,$sql) or die("Não foi possível listar os dados. Erro: " . mysqli_error($conn));
             ?>
 
@@ -50,20 +50,20 @@
 						<tbody>
 							<thead>
 								<tr>
-									<th><b>Aluno</b></th>
-									<th><b>Conceito1</b></th>
-									<th><b>Conceito2</b></th>
-									<th><b>Situação</b></th>									
+									<th><b>Matrícula</b></th>
+									<th><b>Nome</b></th>
+									<th><b>Mês</b></th>
+									<th><b>Qtd</b></th>									
 								</tr>
 							</thead>	
                 
                 <?php while ($row = mysqli_fetch_assoc($query)): ?>
 						
 							<tr>
-                                <td><?php echo $row['nomeAluno'] ?></td>
-								<td><?php echo $row['conceito1'] ?></td>
-								<td><?php echo $row['conceito2'] ?></td>
-								<td><?php echo $row['situacao'] ?></td>								
+                                <td><?php echo $row['matricula'] ?></td>
+								<td><?php echo $row['nomeAluno'] ?></td>
+								<td><?php echo $row['mes'] ?></td>
+								<td><?php echo $row['qtd'] ?></td>								
 							</tr>
              
                 <?php endwhile; ?>
@@ -72,7 +72,7 @@
 					</div>				 			
 			<?php } endif;?>
 			<div class="row col s4 left-align">
-            <a href='relatorioAvaliacoes.php' class="btn waves-effect waves-light">Voltar</a>
+            <a href='inicioAluno.php' class="btn waves-effect waves-light">Voltar</a>
         	</div>	
 			<?php mysqli_close($conn); ?>			
 				</div>

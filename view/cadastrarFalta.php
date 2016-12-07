@@ -9,21 +9,11 @@
             <div class="row input-field col s6 left-align">
                 <input type="text" name="matriculaAluno">
                 <label for="matriculaAluno">Matrícula:</label>
-            </div>
+            </div>            
 
             <div class="row input-field col s6 left-align">
-                <input type="number" min="1" max="20" name="falta">
-                <label for="falta">Faltas:</label>             
-            </div>
-
-            <div class="row input-field col s6 left-align">
-                <input type="text" name="codigoTurma">
-                <label for="codigoTurma">Código Turma:</label>
-            </div>
-
-            <div class="row input-field col s6 left-align">
-                <input type="text" name="nomeDisciplina">
-                <label for="nomeDisciplina">Disciplina:</label>
+                <input type="text" name="codigoDisciplinaTurma">
+                <label for="codigoDisciplinaTurma">Código:</label>
             </div>
             
         	<div class="row input-field col s6 left-align">
@@ -42,18 +32,10 @@
         			<option value="novembro">Novembro</option>
         			<option value="dezembro">Dezembro</option>
         		</select>
-        	</div>
-        	
+        	</div>        	
         	<div class="row input-field col s6 left-align">
-        		<select name="abono">
-        			<option value="">Abono:</option>
-        			<option value="sim">Sim</option>
-        			<option value="nao">Não</option>
-        		</select>
-        	</div>
-        	<div class="row input-field col s12 left-align">
-        		<input type="text" name="motivo">
-        		<label for="motivo">Motivo:</label>        		
+        		<input type="number" name="qtdFalta">
+        		<label for="qtdFalta">Qtd:</label>        		
         	</div>
         	<div class="row col s4 left-align btnform">
         		<button class="btn waves-effect waves-ligth" type="submit" name="cadastrar">

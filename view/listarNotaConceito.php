@@ -8,7 +8,7 @@
         <?php require_once '../model/conexao.php'; ?>                    
                
             <?php //SQL para LISTAR as Notas Conceito
-            $sql = "SELECT codigoNota, matriculaAluno, conceito1, conceito2 FROM notaConceito";
+            $sql = "SELECT matriculaAluno, conceito1, conceito2 FROM notaConceito";
             $query = mysqli_query($conn, $sql) or die("Não foi possível listar o(s) conceito(s). Erro: " . mysqli_error($conn));?>
 
             <?php if (mysqli_num_rows($query) > 0):?>
@@ -33,8 +33,8 @@
 								<td><?php echo $row['matriculaAluno'] ?></td>
 								<td><?php echo strtoupper($row['conceito1']) ?></td>
 								<td><?php echo strtoupper($row['conceito2']) ?></td>
-								<td><a href="../model/excluir/excluirNotaConceito.php?codigoNota=<?php echo $row['codigoNota']; ?>"><i class="material-icons">delete</i></a>
-								<a href="../view/editarNotaConceito.php?codigoNota=<?php echo $row['codigoNota']; ?>"><i class="material-icons">edit</i></a></td>
+								<td><a href="../model/excluir/excluirNotaConceito.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>"><i class="material-icons">delete</i></a>
+								<a href="../view/editarNotaConceito.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>"><i class="material-icons">edit</i></a></td>
 							</tr>                        
                 <?php endwhile; ?> 						
 					</tbody>						

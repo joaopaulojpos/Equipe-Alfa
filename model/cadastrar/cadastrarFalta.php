@@ -1,14 +1,11 @@
 <?php
 	require_once '../conexao.php';
 
-	if(isset($_POST['matriculaAluno'])){		
+	if(isset($_POST['matriculaAluno'])){				
 		$matriculaAluno = $_POST['matriculaAluno'];
-		$codigoTurma = $_POST['codigoTurma'];
-		$nomeDisciplina = $_POST['nomeDisciplina'];
+		$codigoDisciplinaTurma = $_POST['codigoDisciplinaTurma'];
 		$mes = $_POST['mes'];
-		$falta = $_POST['falta'];
-		$abono = $_POST['abono'];
-		$motivo = $_POST['motivo'];
+		$qtdFalta = $_POST['qtdFalta'];		
 	
 
 	$sql1 = "SELECT matriculaAluno FROM aluno WHERE matriculaAluno = '$matriculaAluno'";
@@ -16,66 +13,52 @@
 	$row1 = mysqli_fetch_assoc($query1);
 	$aluno = $row1['matriculaAluno'];
 
-	$sql2 = "SELECT codigoTurma FROM turma WHERE codigoTurma = '$codigoTurma'";
+	$sql2 = "SELECT codigoDisciplinaTurma FROM disciplinaTurma WHERE codigoDisciplinaTurma = '$codigoDisciplinaTurma'";
 	$query2 = mysqli_query($conn,$sql2);
 	$row2 = mysqli_fetch_assoc($query2);
-	$turma = $row2['codigoTurma'];
-
-	$sql3 = "SELECT nomeDisciplina FROM disciplina WHERE nomeDisciplina = '$nomeDisciplina'";
-	$query3 = mysqli_query($conn,$sql3);
-	$row3 = mysqli_fetch_assoc($query3);
-	$disciplina = $row3['nomeDisciplina'];
+	$codigo = $row2['codigoDisciplinaTurma'];
 
 	if($matriculaAluno == ""){
 
-					echo "<script type='text/javascript'>alert('O campo matricula deve ser preenchido!');location.href='../../view/cadastrarFalta.php';</script>";
+					echo "<script type='text/javascript'>alert('O campo matricula deve ser preenchido.');location.href='../../view/cadastrarFalta.php';</script>";
 			}else
 				if($matriculaAluno != $aluno){
 
-					echo "<script type='text/javascript'>alert('O aluno não está cadastrado!');location.href='../../view/cadastrarFalta.php';</script>";
+					echo "<script type='text/javascript'>alert('O aluno não está cadastrado.');location.href='../../view/cadastrarFalta.php';</script>";
 		
 				}else
-					if($falta == ""){
+					if($codigoDisciplinaTurma == ""){
 
-						echo "<script type='text/javascript'>alert('Informe a(s) falta(s) do aluno no mês selecionado!');location.href='../../view/cadastrarFalta.php';</script>";
+						echo "<script type='text/javascript'>alert('Informe o código solicitado.');location.href='../../view/cadastrarFalta.php';</script>";
 
 					}
-					if($codigoTurma == ""){
+					if($codigoDisciplinaTurma != $codigo){
 
-						echo "<script type='text/javascript'>alert('Informe o código da turma!');location.href='../../view/cadastrarFalta.php';</script>";
+						echo "<script type='text/javascript'>alert('Dados não encontrados.');location.href='../../view/cadastrarFalta.php';</script>";
 
 						}else
-							if($codigoTurma != $turma){
+							if($mes ==""){
 
-								echo "<script type='text/javascript'>alert('Turma não encontrada!');location.href='../../view/cadastrarFalta.php';</script>";
-
-							}else
-							if($nomeDisciplina == ""){
-
-								echo "<script type='text/javascript'>alert('Informe o nome da disciplina!');location.href='../../view/cadastrarFalta.php';</script>";
+								echo "<script type='text/javascript'>alert('Selecione o mês.');location.href='../../view/cadastrarFalta.php';</script>";
 
 							}else
-								if($disciplina != $disciplina){
+							if($qtdFalta == ""){
 
-									echo "<script type='text/javascript'>alert('Disciplina não encontrada!');location.href='../../view/cadastrarFalta.php';</script>";
+								echo "<script type='text/javascript'>alert('Informe a quantidade de faltas.');location.href='../../view/cadastrarFalta.php';</script>";
 
-								}else					
-								if ($mes == "") {
-
-									echo "<script type='text/javascript'>alert('Escolha o mês!');location.href='../../view/cadastrarFalta.php';</script>";					
-				}else
-					if($abono == ""){
-
-						echo "<script type='text/javascript'>alert('Informe se houve abono ou não sobre a(s) falta(s)!');location.href='../../view/cadastrarFalta.php';</script>";
 			}else{				
 
-	$sql4 = "INSERT INTO falta (matriculaAluno, codigoTurma, nomeDisciplina, mes, falta, abono, motivo) VALUES('$matriculaAluno', '$codigoTurma', '$nomeDisciplina', '$mes', '$falta', '$abono', '$motivo')";
-	$query4 = mysqli_query($conn,$sql4) or die("Não foi possível cadastrar a falta! Erro: " . mysqli_error($conn));
+	$sql3 = "INSERT INTO falta (matriculaAluno, codigoDisciplinaTurma, mes, qtdFalta) VALUES('$matriculaAluno', '$codigoDisciplinaTurma', '$mes', '$qtdFalta')";
+	$query3 = mysqli_query($conn,$sql3) or die("Não foi possível cadastrar a falta! Erro: " . mysqli_error($conn));
+}
 
-	if($query4){
+	if($query3){
 
 		echo "<script type='text/javascript'>alert('Falta(s) inserida(s) com sucesso!');location.href='../../view/cadastrarFalta.php';</script>";
-		}
+
+		}else{
+
+		echo "<script type='text/javascript'>alert('Não foi possível cadastrar a nota!');location.href='../../view/cadastrarFalta.php';</script>";
 	}
 
 	mysqli_close($conn);

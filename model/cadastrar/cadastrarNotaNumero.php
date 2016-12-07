@@ -1,31 +1,30 @@
 <?php
 	require_once '../conexao.php';
 
-	if(isset($_POST['codigoNota'])){
-	$codigoNota = $_POST['codigoNota'];
+	if(isset($_POST['matriculaAluno'])){
+	$matriculaAluno = $_POST['matriculaAluno'];
 	$nota1 = $_POST['nota1'];
 	$nota2 = $_POST['nota2'];
 
-		$sql = "SELECT codigoNota, matriculaAluno FROM nota WHERE codigoNota = '$codigoNota'";
+		$sql = "SELECT matriculaAluno FROM nota WHERE matriculaAluno = '$matriculaAluno'";
 		$query = mysqli_query($conn,$sql) or die("Dados não encontrados. Erro: " . mysqli_error($conn));
-		$row = mysqli_fetch_assoc($query);	
-		$codigo = $row['codigoNota'];	
+		$row = mysqli_fetch_assoc($query);		
 		$matricula = $row['matriculaAluno'];
 
 
 		
 
-		if($codigoNota == ""){
+		if($matriculaAluno == ""){
 
 			echo "<script type='text/javascript'>alert('O código da nota deve ser informado.');location.href='../../view/cadastrarNotaNumero.php';</script>";
 
-		/*else
+		}else
 			if(strlen($matriculaAluno) > 10 || strlen($matriculaAluno) < 10){
 
-				echo "<script type='text/javascript'>alert('O campo matrícula deve conter 10 dígitos numéricos.');location.href='../../view/cadastrarNotaNumero.php';</script>";*/
+				echo "<script type='text/javascript'>alert('O campo matrícula deve conter 10 dígitos numéricos.');location.href='../../view/cadastrarNotaNumero.php';</script>";
 
 			}else
-				if($codigoNota != $codigo){
+				if($matriculaAluno != $matricula){
 
 				echo "<script type='text/javascript'>alert('Nota não cadastrada.');location.href='../../view/cadastrarNotaNumero.php';</script>";
 
@@ -37,7 +36,7 @@
 							echo "<script type='text/javascript'>alert('A 1ª nota do aluno já encontra - se cadastrada.');location.href='../../view/cadastrarNotaNumero.php';</script>";
 						}else{
 
-						$sql1 = "INSERT INTO notaNumero(codigoNota, matriculaAluno, nota1) VALUES('$codigo', '$matriculaAluno', '$nota1')";
+						$sql1 = "INSERT INTO notaNumero(matriculaAluno, nota1) VALUES('$matriculaAluno', '$nota1')";
 						$query1 = mysqli_query($conn,$sql1) or die("Erro nota1: " . mysqli_error($conn));		
 
 						if($query1){		

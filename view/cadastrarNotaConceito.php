@@ -5,6 +5,7 @@
 			<div class="col s8 offset-s3 card center-align card-content #eceff1 blue-grey lighten-5">
 			<h2>Nota Conceito</h2>		
 			<form method="post" action="../model/cadastrar/cadastrarNotaConceito.php">
+			
 				<div class="row input-field col s12 left-align"/>
 					<input type="text" name="matriculaAluno">
 					<label for="matriculaAluno">Matrícula:</label>

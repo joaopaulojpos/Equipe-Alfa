@@ -1,16 +1,14 @@
 <?php
 require_once '../conexao.php';
 
-if(isset($_POST['matriculaAluno'])){
+if(isset($_POST['codigoFalta'])){
+	$codigoFalta = $_POST['codigoFalta'];
 	$matriculaAluno = $_POST['matriculaAluno'];
-	$falta = $_POST['falta'];
-	$codigoTurma = $_POST['codigoTurma'];
-	$nomeDisciplina = $_POST['nomeDisciplina'];
+	$codigoDisciplinaTurma = $_POST['codigoDisciplinaTurma'];
 	$mes = $_POST['mes'];
-	$abono = $_POST['abono'];
-	$motivo = $_POST['motivo'];
+	$qtdFalta = $_POST['qtdFalta'];
 
-	$sql = "UPDATE falta SET matriculaAluno = '$matriculaAluno', falta = '$falta', codigoTurma = '$codigoTurma', nomeDisciplina = '$nomeDisciplina', mes = '$mes', abono = '$abono', motivo = '$motivo' WHERE matriculaAluno = '$matriculaAluno'";
+	$sql = "UPDATE falta SET matriculaAluno = '$matriculaAluno', codigoDisciplinaTurma = '$codigoDisciplinaTurma', mes = '$mes', qtdFalta = '$qtdFalta' WHERE codigoFalta = '$codigoFalta'";
 	$query = mysqli_query($conn,$sql) or die("Não foi possível atualizar os dados! " . mysqli_error($conn));	
 
 	echo "<script type='text/javascript'>alert('Falta atualizada com sucesso!');location.href='../../view/listarFaltas.php';</script>";

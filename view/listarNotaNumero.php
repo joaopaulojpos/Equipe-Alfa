@@ -8,7 +8,7 @@
         <?php require_once '../model/conexao.php'; ?>                    
                
             <?php //SQL para LISTAR as Notas Número
-            $sql = "SELECT codigoNota, matriculaAluno, nota1, nota2 FROM notaNumero";
+            $sql = "SELECT matriculaAluno, nota1, nota2 FROM notaNumero";
             $query = mysqli_query($conn, $sql) or die("Não foi possível listar a(s) nota(s). Erro: " . mysqli_error($conn));?>
 
             <?php if (mysqli_num_rows($query) > 0):?>
@@ -20,7 +20,7 @@
 					<tbody>							
 						<thead>
 							<tr>
-								<th>Matrícula Aluno</th>
+								<th>Matrícula</th>
 								<th>1ª Nota</th>
 								<th>2ª Nota</th>								
 								<th>Ações</th>
@@ -33,8 +33,8 @@
 								<td><?php echo $row['matriculaAluno'] ?></td>
 								<td><?php echo $row['nota1']    ?></td>
 								<td><?php echo $row['nota2']    ?></td>
-								<td><a href="../model/excluir/excluirNotaNumero.php?codigoNota=<?php echo $row['codigoNota']; ?>"><i class="material-icons">delete</i></a>
-								<a href="../view/editarNotaNumero.php?codigoNota=<?php echo $row['codigoNota']; ?>"><i class="material-icons">edit</i></a></td>
+								<td><a href="../model/excluir/excluirNotaNumero.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>"><i class="material-icons">delete</i></a>
+								<a href="../view/editarNotaNumero.php?matriculaAluno=<?php echo $row['matriculaAluno']; ?>"><i class="material-icons">edit</i></a></td>
 							</tr>                        
                 <?php endwhile; ?> 						
 					</tbody>						

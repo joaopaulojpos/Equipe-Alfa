@@ -6,10 +6,9 @@
 	$conceito1 = $_POST['conceito1'];
 	$conceito2 = $_POST['conceito2'];
 
-		$sql = "SELECT codigoNota, matriculaAluno FROM nota WHERE matriculaAluno = '$matriculaAluno'";
+		$sql = "SELECT matriculaAluno FROM nota WHERE matriculaAluno = '$matriculaAluno'";
 		$query = mysqli_query($conn,$sql) or die("Não foi possível pegar o código da nota. Erro: " . mysqli_error($conn));
 		$row = mysqli_fetch_assoc($query);
-		$codigoNota = $row['codigoNota'];
 		$matricula = $row['matriculaAluno'];
 
 		$sql1 = "SELECT matriculaAluno, conceito1, conceito2 FROM notaConceito WHERE matriculaAluno = '$matriculaAluno'";
@@ -45,7 +44,7 @@
 							echo "<script type='text/javascript'>alert('O 1º conceito do aluno já foi inserido!');location.href='../../view/listarNotaConceito.php';</script>";
 						}else{
 
-							$sql2 = "INSERT INTO notaConceito(codigoNota, matriculaAluno, conceito1) VALUES('$codigoNota', '$matriculaAluno', '$conceito1')";
+							$sql2 = "INSERT INTO notaConceito(matriculaAluno, conceito1) VALUES('$matriculaAluno', '$conceito1')";
 							$query2 = mysqli_query($conn,$sql2) or die("Erro conceito1: " . mysqli_error($conn));		
 
 								if($query2){		
